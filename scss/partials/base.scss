@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*::selection {
+
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.8;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+}
