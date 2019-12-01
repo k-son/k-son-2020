@@ -2,18 +2,42 @@
   min-width: 100%;
   width: 100%;
   height: 100vh;
+  padding: 3rem;
   background-color: var(--color-bg-main);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  text-align: center;
+
+  &__h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: .6rem;
+    word-spacing: .4rem;
+    background-color: var(--color-h2);
+    color: transparent;
+    background-image: linear-gradient(to bottom right, var(--color-h2), var(--color-h2) 25%, rgb(245, 245, 245), var(--color-h2) 75%, var(--color-h2));
+    background-size: 400% 300vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 8s ease-in-out .1s infinite alternate running;
+  }
 
   &__caption {
     position: relative;
-    @include center-hor-ver;
+    font-family: 'Anton', sans-serif;
     text-align: center;
+    letter-spacing: .5vw;
 
     &__shadow {
       position: absolute;
       font-size: 18vw;
-      font-weight: 700;
       text-transform: uppercase;
       color: transparent;
       width: 100%;
@@ -25,13 +49,12 @@
       }
     }
     
-
     &__h1 {
       position: relative;
       font-size: 18vw;
       font-weight: 700;
       text-transform: uppercase;
-      background-image: linear-gradient(to bottom right, rgb(34, 119, 255), rgb(34, 119, 255) 25%, rgb(245, 245, 245), rgb(34, 119, 255) 75%, rgb(34, 119, 255));
+      background-image: linear-gradient(to bottom right, var(--color-blue-main), var(--color-blue-main) 25%, rgb(245, 245, 245), var(--color-blue-main) 75%, var(--color-blue-main));
       background-size: 400% 300vh;
       background-repeat: no-repeat;
       background-position: center center;
@@ -39,9 +62,60 @@
       -webkit-background-clip: text;
       color: transparent;
       z-index: 2;
-      letter-spacing: -.5rem;
       animation: move-bg 8s ease-in-out .1s infinite alternate running;
+    }
+  }
 
+  &__scroll-down {
+    position: fixed;
+    bottom: 5rem;
+    right: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 1rem;
+    width: 2rem;
+
+    @media only screen and (orientation: portrait) {
+      flex-direction: row;
+      bottom: 3rem;
+      right: 20vw;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      content: "";
+      width: 2px;
+      height: 6rem;
+      background-color: var(--color-blue-main);
+      opacity: .6;
+
+      @media only screen and (orientation: portrait) {
+        height: 3rem;
+      }
+    }
+
+    &__letter {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.4rem;
+      line-height: 1.2;
+      letter-spacing: .4rem;
+      text-transform: uppercase;
+      color: var(--color-blue-main);
+      color: var(--color-h2);
+      opacity: .8;
+
+      @media only screen and (orientation: portrait) {
+        font-size: 1.2rem;
+        letter-spacing: .3rem;
+      }
+
+      &:last-of-type {
+        transform: translateX(1px);
+      }
     }
   }
 }
@@ -57,7 +131,7 @@
 
 @keyframes move-shadow {
   0% {
-    text-shadow: -2.5rem -1.8rem 1.5rem rgba(0,0,0,.25);
+    text-shadow: -2.5rem -1.8rem 1.8rem rgba(0,0,0,.25);
   }
 
   50% {
@@ -65,7 +139,7 @@
   }
 
   100% {
-    text-shadow: 2.5rem 1.8rem 1.5rem rgba(0,0,0,.25);
+    text-shadow: 2.5rem 1.8rem 1.8rem rgba(0,0,0,.25);
   }
 }
 
