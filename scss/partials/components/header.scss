@@ -18,7 +18,13 @@
       color: transparent;
       width: 100%;
       //text-shadow: -12px 8px 10px #eee, -3px -1px 3px #eee, 1px -2px 2px #eee, -1px 2px 2px #eee;
-      text-shadow: 0 13.36px 8.896px #bbb;
+      //text-shadow: 0 13.36px 8.896px #bbb;
+      text-shadow: -1.5rem 0 1rem #bbb;
+      animation: move-shadow 10s ease-in-out .1s infinite alternate running;
+
+      @media only screen and (orientation: portrait) {
+        animation: move-shadow-portrait 10s ease-in-out .1s infinite alternate running;
+      }
     }
     
 
@@ -29,6 +35,7 @@
       text-transform: uppercase;
       background-image: linear-gradient(to bottom right, rgb(34, 95, 191), rgb(34, 95, 191) 15%, white, rgb(158, 47, 209) 85%, rgb(158, 47, 209));
       background-image: linear-gradient(to bottom right, rgb(34, 119, 255), rgb(34, 119, 255) 20%, rgb(250, 250, 250), rgb(200, 82, 255) 80%, rgb(200, 82, 255));
+      background-image: linear-gradient(to bottom right, rgb(34, 119, 255), rgb(34, 119, 255) 25%, rgb(245, 245, 245), rgb(34, 119, 255) 75%, rgb(34, 119, 255));
       background-size: 400% 300vh;
       //background-size: 100%;
       background-repeat: no-repeat;
@@ -37,8 +44,7 @@
       //-webkit-background-clip: text;
       color: transparent;
       z-index: 2;
-
-      animation: move-bg 8s linear .1s infinite alternate running;
+      animation: move-bg 10s ease-in-out .1s infinite alternate running;
 
     }
   }
@@ -50,5 +56,33 @@
   }
   to {
     background-position:  right;
+  }
+}
+
+@keyframes move-shadow {
+  0% {
+    text-shadow: -2.5rem -1.5rem 1.5rem #bbb;
+  }
+
+  50% {
+    text-shadow: 0 .2rem .5rem #bbb;
+  }
+
+  100% {
+    text-shadow: 2.5rem 1.5rem 1.5rem #bbb;
+  }
+}
+
+@keyframes move-shadow-portrait {
+  0% {
+    text-shadow: -1.5rem -1rem 1rem #bbb;
+  }
+
+  50% {
+    text-shadow: 0 .2rem .5rem #bbb;
+  }
+
+  100% {
+    text-shadow: 1.5rem 1rem 1rem #bbb;
   }
 }
