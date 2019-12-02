@@ -7,7 +7,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-content: center;
   text-align: center;
 
@@ -34,15 +34,18 @@
     position: relative;
     font-family: 'Anton', sans-serif;
     font-family: 'Fjalla One', sans-serif;
-    text-align: center;
+    font-size: 18vw;
+    font-weight: 700;
+    line-height: 1.2;
     letter-spacing: .5vw;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 5rem 0;
 
     &__shadow {
-      position: absolute;
-      font-size: 18vw;
-      text-transform: uppercase;
-      color: transparent;
+      position: absolute;  
       width: 100%;
+      color: transparent;
       text-shadow: -2.5rem -1.8rem 1.5rem rgba(0,0,0,.25);
       animation: move-shadow 8s ease-in-out .1s infinite alternate running;
 
@@ -53,9 +56,6 @@
     
     &__h1 {
       position: relative;
-      font-size: 18vw;
-      font-weight: 700;
-      text-transform: uppercase;
       background-image: linear-gradient(to bottom right, var(--color-blue-main), var(--color-blue-main) 25%, rgb(245, 245, 245), var(--color-blue-main) 75%, var(--color-blue-main));
       background-size: 400% 300vh;
       background-repeat: no-repeat;
