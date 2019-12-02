@@ -13,9 +13,10 @@
 
   &__h2 {
     font-family: 'Anton', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     font-size: 2rem;
     line-height: 1.2;
-    font-weight: 400;
+    font-weight: 800;
     letter-spacing: .6rem;
     word-spacing: .4rem;
     background-color: var(--color-h2);
@@ -32,6 +33,7 @@
   &__caption {
     position: relative;
     font-family: 'Anton', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     text-align: center;
     letter-spacing: .5vw;
 
@@ -100,13 +102,13 @@
 
     &__letter {
       font-family: 'Anton', sans-serif;
+      font-family: 'Fjalla One', sans-serif;
       font-size: 1.4rem;
       line-height: 1.2;
       letter-spacing: .4rem;
       text-transform: uppercase;
       color: var(--color-blue-main);
       color: var(--color-h2);
-      opacity: .8;
 
       @media only screen and (orientation: portrait) {
         font-size: 1.2rem;

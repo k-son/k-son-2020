@@ -1,0 +1,50 @@
+.navigation {
+  width: 100%;
+  max-width: var(--width-website);
+  position: sticky;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  background-color: rgba(var(--color-bg-main), .6);
+
+  &__list {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    vertical-align: middle;
+  }
+
+  &__part {
+
+    &--home {
+      text-transform: uppercase;
+    }
+
+    &--sections {
+      display: flex;
+      text-transform: capitalize;
+
+      & li:not(:last-of-type) h3 {
+        margin-right: 1rem;
+      }
+    }
+
+    &__link {
+      
+      &__h1 {
+        padding: 1rem;
+        color: var(--color-blue-main);
+      }
+
+      &__h3 {
+        padding: 1rem;
+        color: var(--color-navigation);
+      }
+    }
+  }
+}
+
