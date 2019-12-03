@@ -19,9 +19,9 @@
     font-weight: 800;
     letter-spacing: .6rem;
     word-spacing: .4rem;
-    background-color: var(--color-h2);
+    background-color: var(--color-h2-header);
     color: transparent;
-    background-image: linear-gradient(to bottom right, var(--color-h2), var(--color-h2) 25%, rgb(245, 245, 245), var(--color-h2) 75%, var(--color-h2));
+    background-image: linear-gradient(to bottom right, var(--color-h2-header), var(--color-h2-header) 25%, rgb(245, 245, 245), var(--color-h2-header) 75%, var(--color-h2-header));
     background-size: 400% 300vh;
     background-repeat: no-repeat;
     background-position: center center;
@@ -108,7 +108,7 @@
       letter-spacing: .4rem;
       text-transform: uppercase;
       color: var(--color-blue-main);
-      color: var(--color-h2);
+      color: var(--color-h2-header);
 
       @media only screen and (orientation: portrait) {
         font-size: 1.2rem;

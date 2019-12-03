@@ -85,3 +85,4 @@ window.onscroll = hideScrollDownBtn;
 scrollDown.addEventListener('click', () => {
   document.querySelector('.navigation').scrollIntoView();
 })
+
