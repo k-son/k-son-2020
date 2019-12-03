@@ -34,15 +34,37 @@
     }
 
     &__link {
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:hover > h3::after {
+        @include center-hor;
+      }
       
       &__h1 {
-        padding: 1rem;
+        padding: var(--padding-nav-item);
         color: var(--color-blue-main);
       }
 
       &__h3 {
-        padding: 1rem;
+        padding: var(--padding-nav-item);
         color: var(--color-navigation);
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+          display: block;
+          content: "";
+          width: calc(100% - (var(--padding-nav-item) * 2));
+          height: 2px;
+          background-color: var(--color-blue-main);
+          position: absolute;
+          bottom: var(--padding-nav-item);
+          left: -200%;
+          transition: all .3s;
+        }
       }
     }
   }

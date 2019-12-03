@@ -8,3 +8,8 @@
   top: 50%;
   transform: translateY(-50);
 }
+
+@mixin center-hor {
+  left: 50%;
+  transform: translateX(-50%);
+}
