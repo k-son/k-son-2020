@@ -7,6 +7,7 @@
   margin: 0 auto;
   background-color: rgba(var(--color-bg-main), .6);
   background-color: lightcoral;
+  z-index: 99;
 
   &__list {
     width: 100%;
