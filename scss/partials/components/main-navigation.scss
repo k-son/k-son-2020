@@ -42,6 +42,10 @@
       &:hover > h3::after {
         @include center-hor;
       }
+
+      &:active > h3 {
+        color: var(--color-blue-main);
+      }
       
       &__h1 {
         padding: var(--padding-nav-item);
