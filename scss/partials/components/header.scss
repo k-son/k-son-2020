@@ -79,6 +79,15 @@
     padding: 1rem;
     width: 2rem;
 
+    &:hover &__letter:nth-last-of-type(1),
+    &:hover &__letter:nth-last-of-type(3) {
+      color: var(--color-main);
+    }
+
+    &:focus &__letter{
+      color: var(--color-main);
+    }
+
     @media only screen and (orientation: portrait) {
       flex-direction: row;
       bottom: 3rem;
@@ -108,7 +117,6 @@
       line-height: 1.2;
       letter-spacing: .4rem;
       text-transform: uppercase;
-      color: var(--color-main);
       color: var(--color-h2-header);
 
       @media only screen and (orientation: portrait) {

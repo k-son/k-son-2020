@@ -40,6 +40,10 @@
         cursor: pointer;
       }
 
+      &:hover > h1 {
+        color: var(--color-main);
+      }
+
       &:hover > h3::after {
         @include center-hor;
       }
@@ -48,27 +52,20 @@
         outline: none;
       }
 
-      &:focus > h1 {
-        outline: none;
-        color: var(--color-bg-main);
-      }
-
+      &:focus > h1,
       &:focus > h3 {
         outline: none;
         color: var(--color-main);
       }
 
-      &:active > h1 {
-        color: var(--color-bg-main);
-      }
-
+      &:active > h1,
       &:active > h3 {
         color: var(--color-main);
       }
       
       &__h1 {
         padding: var(--padding-nav-item);
-        color: var(--color-main);
+        color: var(--color-bg-main);
       }
 
       &__h3 {
