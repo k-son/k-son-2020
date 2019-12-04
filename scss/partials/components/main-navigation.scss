@@ -45,12 +45,12 @@
       }
 
       &:active > h3 {
-        color: var(--color-blue-main);
+        color: var(--color-main);
       }
       
       &__h1 {
         padding: var(--padding-nav-item);
-        color: var(--color-blue-main);
+        color: var(--color-main);
       }
 
       &__h3 {
@@ -64,7 +64,7 @@
           content: "";
           width: calc(100% - (var(--padding-nav-item) * 2));
           height: 2px;
-          background-color: var(--color-blue-main);
+          background-color: var(--color-main);
           position: absolute;
           bottom: var(--padding-nav-item);
           left: -200%;

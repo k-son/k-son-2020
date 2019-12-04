@@ -1,6 +1,5 @@
 "use strict";
 
-// Header fade on scroll down
 const header = document.querySelector('.header');
 const headerCaption = document.querySelector('.header__caption__h1');
 const headerCaptionShadow = document.querySelector('.header__caption__shadow');
@@ -8,14 +7,26 @@ let viewportHeight;
 let num;
 let heightBreakPoints = [];
 
+const styles = getComputedStyle(document.documentElement);
+const colorMain = styles.getPropertyValue('--color-main');
+const colorSecondary = styles.getPropertyValue('--color-secondary');
+
+const skillsBtns = document.querySelectorAll('.skills__btn');
+const skillIcons = document.querySelectorAll('.skills__icon');
+const descriptionBox = document.querySelector('.skills__descriptions-box');
+const descriptions = document.querySelectorAll('.skills__description');
+
+
+
+// Header fade on scroll down
 function getViewportHeight() {
   viewportHeight = window.innerHeight;
 }
 getViewportHeight();
 window.addEventListener('resize', getViewportHeight);
 
-num = viewportHeight / 100; // increase the number after division sing if you want the header to fade sooner
-for (let i=1; i<=100 ;i++) {
+num = viewportHeight / 30; // increase the number after division sing if you want the header to fade sooner
+for (let i=1; i<=30 ;i++) {
   heightBreakPoints.push(num*i);
 }
 
@@ -66,3 +77,21 @@ window.onscroll = hideScrollDownBtn;
 scrollDown.addEventListener('click', () => {
   document.querySelector('.navigation').scrollIntoView();
 })
+
+
+/// tech skills buttons
+for (let skill=0; skill<skillsBtns.length; skill++) {
+  skillsBtns[skill].addEventListener('click', () => {
+    skillIcons.forEach(e => {
+      e.style.color = colorMain;
+      e.style.fill = colorMain;
+    })
+    descriptions.forEach(e => e.style.display = "none");
+    skillIcons[skill].style.color = colorSecondary;
+    skillIcons[skill].style.fill = colorSecondary;
+    descriptionBox.style.display = "block";
+    descriptions[skill].style.display = "block";
+    descriptionBox.scrollIntoView();
+  });
+}
+
