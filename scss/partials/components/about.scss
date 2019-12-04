@@ -43,6 +43,16 @@
     &:hover {
       color: var(--color-main);
     }
+
+    &:focus {
+      outline: none;
+      color: var(--color-main);
+    }
+
+    &__icon {
+      height: 1.6rem;
+      margin-left: .3rem;
+    }
   }
 }
 
@@ -69,10 +79,27 @@
 
   &__btn {
     margin-bottom: 2rem;
+    position: relative;
 
     &:not(:last-of-type) {
       margin-right: 3rem;
     }
+
+    &__mark {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      position: absolute;
+      top: -1.4rem;
+      @include center-hor;
+      background-color: var(--color-secondary);
+      visibility: hidden;
+    }
+
+    &:focus > &__mark {
+      visibility: visible;
+    }
+
   }
 
   &__icon {

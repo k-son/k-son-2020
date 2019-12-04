@@ -44,6 +44,24 @@
         @include center-hor;
       }
 
+      &:focus {
+        outline: none;
+      }
+
+      &:focus > h1 {
+        outline: none;
+        color: var(--color-bg-main);
+      }
+
+      &:focus > h3 {
+        outline: none;
+        color: var(--color-main);
+      }
+
+      &:active > h1 {
+        color: var(--color-bg-main);
+      }
+
       &:active > h3 {
         color: var(--color-main);
       }

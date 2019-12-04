@@ -15,6 +15,7 @@ const skillsBtns = document.querySelectorAll('.skills__btn');
 const skillIcons = document.querySelectorAll('.skills__icon');
 const descriptionBox = document.querySelector('.skills__descriptions-box');
 const descriptions = document.querySelectorAll('.skills__description');
+const iconMarks = document.querySelectorAll('.skills__btn__mark');
 
 
 
@@ -80,7 +81,8 @@ scrollDown.addEventListener('click', () => {
 
 
 /// tech skills buttons
-for (let skill=0; skill<skillsBtns.length; skill++) {
+
+for (let skill = 0; skill<skillsBtns.length; skill++) {
   skillsBtns[skill].addEventListener('click', () => {
     skillIcons.forEach(e => {
       e.style.color = colorMain;
