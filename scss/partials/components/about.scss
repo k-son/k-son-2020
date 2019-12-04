@@ -45,3 +45,50 @@
     }
   }
 }
+
+.about {
+
+  &__h3 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    margin: var(--margin-common) 0;
+  }
+}
+
+.skills {
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__icon {
+    height: 6rem;
+    color: var(--color-blue-main);
+    margin-bottom: 2rem;
+
+    &:not(:last-of-type) {
+      margin-right: 3rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: var(--color-secondary);
+    }
+
+    &--ps {
+      height: 6rem;
+      margin-left: var(--margin-common);
+      margin-left: 0;
+      fill: var(--color-blue-main);
+
+      &:hover {
+        cursor: pointer;
+        fill: var(--color-secondary);
+      }
+    }
+  }
+}

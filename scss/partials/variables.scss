@@ -1,8 +1,9 @@
 :root {
   --width-website: 1024px;
 
-  --color-bg-main: rgb(255, 255, 255);
+  --color-bg-main: #ffffff;
   --color-blue-main: #4385f0;
+  --color-secondary: #f08080;
 
   --color-text: #555;
   --color-h2-header: #c2c2c2;
@@ -10,6 +11,7 @@
   --color-navigation: #fff;
   --color-image-border: #eee;
 
+  --margin-common: 3rem;
   --padding-nav-item: 1rem;
   --padding-section: 2rem;
 }

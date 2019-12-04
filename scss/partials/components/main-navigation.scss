@@ -5,8 +5,7 @@
   top: 0;
   left: 0;
   margin: 0 auto;
-  background-color: rgba(var(--color-bg-main), .6);
-  background-color: lightcoral;
+  background-color: var(--color-secondary);
   z-index: 99;
 
   &__list {
