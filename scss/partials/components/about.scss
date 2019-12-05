@@ -1,11 +1,11 @@
 .about {
-  max-width: 100%;
-  padding: var(--padding-section);
+  
 }
 
 .jacek {
   display: flex;
   align-items: center;
+  @include padding-block;
 
   &__img-border {
     width: 24rem;

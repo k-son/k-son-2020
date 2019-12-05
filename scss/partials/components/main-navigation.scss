@@ -66,6 +66,7 @@
       &__h1 {
         padding: var(--padding-nav-item);
         color: var(--color-bg-main);
+        transition: all .2s;
       }
 
       &__h3 {

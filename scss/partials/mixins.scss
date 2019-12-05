@@ -13,3 +13,7 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+@mixin padding-block {
+  padding: 0 var(--padding-section);
+}

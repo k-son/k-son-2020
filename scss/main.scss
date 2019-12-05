@@ -1,12 +1,13 @@
 @import "partials/destyle";
-@import "partials/base";
 @import "partials/variables";
+@import "partials/mixins";
+@import "partials/base";
 @import "partials/typography";
 @import "partials/layout";
-@import "partials/mixins";
 @import "partials/components";
 
 //components
 @import "partials/components/header.scss";
 @import "partials/components/main-navigation.scss";
 @import "partials/components/about.scss";
+@import "partials/components/projects.scss";
