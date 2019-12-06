@@ -9,4 +9,26 @@
   left: 0;
   top: -10rem;
   visibility: hidden;
+  
+  // just to check out their position
+  &--about {
+    background-color: red;
+    height: 4px;
+    width: 10rem;
+    z-index: 9999;
+  }
+
+  &--projects {
+    background-color: green;
+    height: 4px;
+    width: 10rem;
+    z-index: 9999;
+  }
+
+  &--contact {
+    background-color: blue;
+    height: 4px;
+    width: 10rem;
+    z-index: 9999;
+  }
 }
