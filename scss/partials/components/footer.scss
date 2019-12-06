@@ -1,0 +1,12 @@
+.footer {
+  margin-top: var(--margin-section-top);
+  border-top: 2px solid var(--color-image-border);
+  padding: 2rem 0;
+
+  &__para {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--color-h2-section); 
+  }
+}
