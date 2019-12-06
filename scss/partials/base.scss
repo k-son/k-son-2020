@@ -23,6 +23,14 @@ html {
   line-height: 1.6;
   color: var(--color-text);
   scroll-behavior: smooth;
+
+  @media only screen and (max-width: 900px) {
+    font-size: 56.25%;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 50%;
+  }
+
 }
 
 body {

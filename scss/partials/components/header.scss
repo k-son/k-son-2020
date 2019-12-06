@@ -28,6 +28,11 @@
     background-clip: text;
     -webkit-background-clip: text;
     animation: move-bg 8s ease-in-out .1s infinite alternate running;
+
+    @media only screen and (max-width: 400px) {
+      letter-spacing: .3rem;
+      word-spacing: .2rem;
+    }
   }
 
   &__caption {
@@ -40,6 +45,10 @@
     text-align: center;
     text-transform: uppercase;
     margin: 5rem 0;
+
+    @media only screen and (max-width: 700px) {
+      font-size: 22vw;
+    }
 
     &__shadow {
       position: absolute;  
