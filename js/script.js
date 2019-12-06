@@ -18,9 +18,9 @@ const descriptionBox = document.querySelector('.skills__descriptions-box');
 const descriptions = document.querySelectorAll('.skills__description');
 const iconMarks = document.querySelectorAll('.skills__btn__mark');
 
-const anchorAbout = document.getElementById('about');
-const anchorProjects = document.getElementById('projects');
-const anchorContact = document.getElementById('contact');
+const anchorAbout = document.getElementById('h2--about');
+const anchorProjects = document.getElementById('h2--projects');
+const anchorContact = document.getElementById('h2--contact');
 const naviAbout = document.getElementById('navi-about');
 const naviProjects = document.getElementById('navi-projects');
 const naviContact = document.getElementById('navi-contact');
@@ -123,18 +123,28 @@ let offsetAbout;
 let offsetProjects;
 let offsetContact;
 
+const vh800 = window.matchMedia('(max-height: 800px)');
+function contact() {
+  if (vh800.matches) {
+    offsetContact = rectContact.top - rectBody.top - viewportHeight;
+  } else {
+    offsetContact = rectContact.top - rectBody.top - viewportHeight*1.2;
+  }
+}
+
 function calculateOffset() {
   rectBody = document.body.getBoundingClientRect();
   rectAbout = anchorAbout.getBoundingClientRect();
   rectProjects = anchorProjects.getBoundingClientRect();
   rectContact = anchorContact.getBoundingClientRect();
+  //rectContactParagraph = contactParagraph.getBoundingClientRect();
   offsetAbout = rectAbout.top - rectBody.top;
-  offsetProjects = rectProjects.top - rectBody.top - 400; // last number is to indicate projects in navi sooner
-  offsetContact = rectContact.top - rectBody.top - 600; // last number is to indicate contact in navi sooner
+  offsetProjects = rectProjects.top - rectBody.top - viewportHeight*0.5; // last number is to indicate projects in navi sooner
+  contact();
 }
+
 calculateOffset();
 window.addEventListener('resize', calculateOffset);
-
 
 function navScrollIndication() {
   if ((document.body.scrollTop >= offsetProjects) || (document.documentElement.scrollTop >= offsetProjects)) {
@@ -153,27 +163,6 @@ function navScrollIndication() {
     naviContact.style.color = colorBgMain;
   }
 }
-
-/*
-function navScrollIndication() {
-  if ((document.body.scrollTop >= anchorProjects) || (document.documentElement.scrollTop >= anchorProjects)) {
-    if ((document.body.scrollTop >= anchorProjects && document.body.scrollTop < anchorContact) || (document.documentElement.scrollTop >= anchorProjects && document.documentElement.scrollTop < anchorContact)) {
-      naviAbout.style.color = colorBgMain;
-      naviProjects.style.color = colorMain;
-      naviContact.style.color = colorBgMain;
-    } else {
-      naviAbout.style.color = colorBgMain;
-      naviProjects.style.color = colorBgMain;
-      naviContact.style.color = colorMain;
-    }
-  } else {
-    naviAbout.style.color = colorMain;
-    naviProjects.style.color = colorBgMain;
-    naviContact.style.color = colorBgMain;
-  }
-}
-*/
-
 
 window.addEventListener('scroll', navScrollIndication);
 
