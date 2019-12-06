@@ -9,16 +9,20 @@
     width: 84%;
     margin: 0 auto 5rem;
     padding: var(--padding-section);
-    background-color: var(--color-main);
+    background-color: var(--color-main--darker);
     color: var(--color-bg-main);
     border-radius: 5px;
+
+    &:nth-of-type(2n) {
+      background-color: var(--color-main);
+      }
+    }
 
     /*
     &:hover > .project__h4 {
       color: var(--color-secondary);
     }
     */
-  }
 
   &__h4 {
     font-family: 'Fjalla One', sans-serif;
@@ -50,10 +54,14 @@
       max-width: 32rem;
       height: 18vw;
       max-height: 18rem;
-      border: 6px solid var(--color-main--2);
+      border: 8px solid var(--color-main--lighter);
       border-radius: 5px;
       background-size: cover;
       background-position: center;
+
+      &:nth-of-type(2n) {
+        
+      }
 
       &--lhz {
         background-image: url(../img/lhz_d.jpg);
@@ -84,7 +92,7 @@
       max-width: 13.5rem;
       height: 18vw;
       max-height: 18rem;
-      border: 6px solid var(--color-main--2);
+      border: 8px solid var(--color-main--lighter);
       border-radius: 5px;
       background-size: cover;
       background-position: center;
@@ -113,6 +121,11 @@
     }
   }
 
+  &__container:nth-of-type(2n) > &__mockup > &__mockup__desktop,
+  &__container:nth-of-type(2n) > &__mockup > &__mockup__mobile {
+    border: 8px solid var(--color-main--darkest);
+  }
+  
   &__links {
     display: flex;
     justify-content: center;
