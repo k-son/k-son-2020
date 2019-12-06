@@ -84,7 +84,6 @@
     flex-direction: column;
     align-content: center;
     padding: 1rem;
-    width: 2rem;
 
     &:hover &__letter:nth-last-of-type(1),
     &:hover &__letter:nth-last-of-type(3) {
@@ -97,8 +96,8 @@
 
     @media only screen and (orientation: portrait) {
       flex-direction: row;
-      bottom: 3rem;
-      right: 20vw;
+      bottom: 5rem;
+      right: 10vw;
     }
 
     &::after {
@@ -108,17 +107,17 @@
       display: block;
       content: "";
       width: 2px;
-      height: 6rem;
+      height: 5rem;
       background-color: var(--color-main);
       opacity: .6;
 
       @media only screen and (orientation: portrait) {
-        height: 3rem;
+        height: 4rem;
       }
     }
 
     &__letter {
-      font-family: 'Anton', sans-serif;
+      display: block;
       font-family: 'Fjalla One', sans-serif;
       font-size: 1.4rem;
       line-height: 1.2;
@@ -127,6 +126,7 @@
       color: var(--color-h2-header);
 
       @media only screen and (orientation: portrait) {
+        display: inline;
         font-size: 1.2rem;
         letter-spacing: .3rem;
       }
