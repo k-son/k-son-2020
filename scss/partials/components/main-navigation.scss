@@ -48,11 +48,10 @@
         cursor: pointer;
       }
 
-      &:hover > h1 {
-        color: var(--color-main);
-      }
-
-      &:hover > h3::after {
+      &:hover > h1::after,
+      &:hover > h3::after,
+      &:focus > h1::after,
+      &:focus > h3::after {
         @include center-hor;
       }
 
@@ -60,26 +59,15 @@
         outline: none;
       }
 
-      &:focus > h1,
-      &:focus > h3 {
-        outline: none;
-        color: var(--color-main);
-      }
-
-      &:active > h1,
-      &:active > h3 {
-        color: var(--color-main);
+      &:active > h1::after,
+      &:active > h3::after {
+        width: 5%;
       }
       
-      &__h1 {
-        padding: var(--padding-nav-item);
-        color: var(--color-bg-main);
-        transition: all .2s;
-      }
-
+      &__h1,
       &__h3 {
         padding: var(--padding-nav-item);
-        color: var(--color-navigation);
+        color: var(--color-bg-main);
         position: relative;
         overflow: hidden;
 
@@ -92,7 +80,7 @@
           position: absolute;
           bottom: var(--padding-nav-item);
           left: -200%;
-          transition: all .3s;
+          transition: all .2s;
         }
       }
     }
