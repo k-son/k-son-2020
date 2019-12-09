@@ -18,9 +18,14 @@ const descriptionBox = document.querySelector('.skills__descriptions-box');
 const descriptions = document.querySelectorAll('.skills__description');
 const iconMarks = document.querySelectorAll('.skills__btn__mark');
 
-const anchorAbout = document.getElementById('h2--about');
-const anchorProjects = document.getElementById('h2--projects');
-const anchorContact = document.getElementById('h2--contact');
+const anchorHeader = document.querySelector('.header');
+//const anchorAbout = document.getElementById('h2--about');
+const anchorAbout = document.querySelector('.about');
+//const anchorProjects = document.getElementById('h2--projects');
+const anchorProjects = document.querySelector('.projects');
+//const anchorContact = document.getElementById('h2--contact');
+const anchorContact = document.querySelector('.contact');
+const naviHeader = document.querySelector('.navigation__part__link__h1');
 const naviAbout = document.getElementById('navi-about');
 const naviProjects = document.getElementById('navi-projects');
 const naviContact = document.getElementById('navi-contact');
@@ -115,6 +120,7 @@ for (let skill = 0; skill<skillsBtns.length; skill++) {
   });
 }
 
+
 /*
 /// navi scroll indication
 let rectBody;
@@ -168,6 +174,8 @@ function navScrollIndication() {
 
 window.addEventListener('scroll', navScrollIndication);
 */
+
+
  /// navi scroll indication
 function isElementInViewport(el) {
 
@@ -184,23 +192,31 @@ function isElementInViewport(el) {
   );
 }
 
-function check() {
-  if (isElementInViewport(prCont1)) {
+function indicateInNavigation() {
+  if (isElementInViewport(anchorHeader)) {
+    naviHeader.style.color = colorMain;
     naviAbout.style.color = colorBgMain;
-    naviProjects.style.color = colorMain;
+    naviProjects.style.color = colorBgMain;
+    naviContact.style.color = colorBgMain;
+  } else if (isElementInViewport(anchorAbout)) {
+    naviHeader.style.color = colorBgMain;
+    naviAbout.style.color = colorMain;
+    naviProjects.style.color = colorBgMain;
     naviContact.style.color = colorBgMain;
   } else if (isElementInViewport(anchorContact)) {
+    naviHeader.style.color = colorBgMain;
     naviAbout.style.color = colorBgMain;
     naviProjects.style.color = colorBgMain;
     naviContact.style.color = colorMain;
-  } else if (isElementInViewport(anchorAbout)){
-    naviAbout.style.color = colorMain;
-    naviProjects.style.color = colorBgMain;
+  } else {
+    naviHeader.style.color = colorBgMain;
+    naviAbout.style.color = colorBgMain;
+    naviProjects.style.color = colorMain;
     naviContact.style.color = colorBgMain;
   }
 }
 
-window.addEventListener('scroll', check);
+window.addEventListener('scroll', indicateInNavigation);
 
 
 /// show project containers
