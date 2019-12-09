@@ -25,6 +25,8 @@ const naviAbout = document.getElementById('navi-about');
 const naviProjects = document.getElementById('navi-projects');
 const naviContact = document.getElementById('navi-contact');
 
+const projectContainers = document.querySelectorAll('.project__container');
+
 
 /// Header fade on scroll down
 
@@ -166,7 +168,7 @@ function navScrollIndication() {
 
 window.addEventListener('scroll', navScrollIndication);
 */
- 
+ /// navi scroll indication
 function isElementInViewport(el) {
 
   var rect = el.getBoundingClientRect();
@@ -182,9 +184,8 @@ function isElementInViewport(el) {
   );
 }
 
-
 function check() {
-  if (isElementInViewport(anchorProjects)) {
+  if (isElementInViewport(prCont1)) {
     naviAbout.style.color = colorBgMain;
     naviProjects.style.color = colorMain;
     naviContact.style.color = colorBgMain;
@@ -201,3 +202,13 @@ function check() {
 
 window.addEventListener('scroll', check);
 
+
+/// show project containers
+function showProjects() {
+  for (let i=0; i<projectContainers.length; i++) {
+    if (isElementInViewport(projectContainers[i])) {
+      projectContainers[i].classList.add('opacity-1');
+    }
+  }
+}
+window.addEventListener('scroll', showProjects);
