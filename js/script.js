@@ -221,10 +221,11 @@ window.addEventListener('scroll', indicateInNavigation);
 
 /// show project containers
 function showProjects() {
-  for (let i=0; i<projectContainers.length; i++) {
-    if (isElementInViewport(projectContainers[i])) {
-      projectContainers[i].classList.add('opacity-1');
+  projectContainers.forEach(el => {
+    if (isElementInViewport(el)) {
+      el.classList.add('opacity-1');
     }
-  }
+  })
 }
+
 window.addEventListener('scroll', showProjects);
