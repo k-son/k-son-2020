@@ -113,7 +113,7 @@ for (let skill = 0; skill<skillsBtns.length; skill++) {
   });
 }
 
-
+/*
 /// navi scroll indication
 let rectBody;
 let rectAbout;
@@ -165,5 +165,39 @@ function navScrollIndication() {
 }
 
 window.addEventListener('scroll', navScrollIndication);
-
+*/
  
+function isElementInViewport(el) {
+
+  var rect = el.getBoundingClientRect();
+  return (
+    (rect.top <= 0
+      && rect.bottom >= 0)
+    ||
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+    ||
+    (rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+  );
+}
+
+
+function check() {
+  if (isElementInViewport(anchorProjects)) {
+    naviAbout.style.color = colorBgMain;
+    naviProjects.style.color = colorMain;
+    naviContact.style.color = colorBgMain;
+  } else if (isElementInViewport(anchorContact)) {
+    naviAbout.style.color = colorBgMain;
+    naviProjects.style.color = colorBgMain;
+    naviContact.style.color = colorMain;
+  } else if (isElementInViewport(anchorAbout)){
+    naviAbout.style.color = colorMain;
+    naviProjects.style.color = colorBgMain;
+    naviContact.style.color = colorBgMain;
+  }
+}
+
+window.addEventListener('scroll', check);
+
