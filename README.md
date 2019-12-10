@@ -1,2 +1,3 @@
-# rebuilt of my portfolio site
-under construction
+# My portfolio website
+
+Rebuilt, refreshed.
