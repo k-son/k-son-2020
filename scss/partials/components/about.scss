@@ -154,7 +154,8 @@
       color: var(--color-secondary);
     }
 
-    &--ps {
+    &--ps, 
+    &--bootstrap {
       height: 6rem;
       margin-left: var(--margin-common);
       margin-left: 0;
@@ -164,6 +165,16 @@
         cursor: pointer;
         fill: var(--color-secondary);
       }
+    }
+    &--bootstrap {
+      height: 7rem;
+      margin-left: -.3rem;
+      margin-right: -.3rem;
+    }
+
+    &--jquery {
+      margin-left: -2.2rem;
+      margin-right: -2.2rem;
     }
   }
 
