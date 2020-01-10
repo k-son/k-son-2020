@@ -14,7 +14,7 @@ const colorBgMain = styles.getPropertyValue('--color-bg-main');
 
 const cvBtnCv = document.querySelector('.cv__btn--cv');
 const cvBtnCvSpan = cvBtnCv.querySelector(':scope span')
-const cvButtonsCvLang = document.querySelectorAll('.cv__btn--lang');
+const cvButtonsLangBox = document.querySelector('.cv__buttonsLang-box');
 
 const skillsBtns = document.querySelectorAll('.skills__btn');
 const skillIcons = document.querySelectorAll('.skills__icon');
@@ -104,9 +104,10 @@ scrollDown.addEventListener('click', () => {
 /// cv
 cvBtnCv.addEventListener('click', () => {
   cvBtnCvSpan.style.width = "100%";
-  cvBtnCv.style.display = "none";
-  cvButtonsCvLang.forEach(e =>
-    e.style.display = "block");
+  cvBtnCv.classList.add('cvMoveRight');
+  window.setTimeout(function() {cvBtnCv.style.display = "none";}, 400);
+  cvButtonsLangBox.style.display = "block";
+  cvButtonsLangBox.classList.add('cvMoveLeft');
 })
 
 

@@ -95,6 +95,7 @@
   }
 }
 
+
 .about {
 
   &__h3 {
@@ -110,11 +111,13 @@
 
 .cv {
   width: 100%;
-  height: 9rem;
+  height: 7rem;
   display: flex;
   margin: 5rem auto;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
 
   @media only screen and (max-width: 460px) {
     flex-direction: column;
@@ -124,8 +127,8 @@
   &__btn {
 
     &--cv {
-      width: 26rem;
-      height: 8rem;
+      width: 24rem;
+      height: 7rem;
       font-family: 'Fjalla One', sans-serif;
       font-size: 2rem;
       font-weight: 500;
@@ -133,13 +136,12 @@
       text-transform: uppercase;
       text-align: center;
       margin: 0 auto;
-      padding: 16px 32px;
       border: 4px solid var(--color-secondary);
       border-radius: 5px;
       color: var(--color-secondary);
       overflow: hidden;
       position: relative;
-      transition: transform .15s;
+      transition: all .5s;
       display: block;
 
       & span {
@@ -150,8 +152,8 @@
         width: 0;
         height: 100%;
         background-color: var(--color-main);
-        -webkit-transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-        transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+        -webkit-transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+        transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
         z-index: -1;
       }
 
@@ -169,35 +171,60 @@
     }
 
     &--lang {
-        width: 20rem;
-        height: 6rem;
-        font-family: 'Fjalla One', sans-serif;
-        font-size: 1.6rem;
-        font-weight: 500;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        text-align: center;
-        //border: 4px solid var(--color-secondary);
-        border-radius: 5px;
-        color: var(--color-secondary);
-        background-color: grey;
-        display: none;
+      width: 20rem;
+      height: 6rem;
+      font-family: 'Fjalla One', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: 4px solid var(--color-secondary);
+      color: var(--color-secondary);
+      background-color: (--color-bg-main);
+      position: relative;
+      z-index: 1;
+
+      @media only screen and (max-width: 460px) {
+        width: 24rem;
+      }
+      
+      &:not(:last-of-type) {
+        margin-right: 5rem;
 
         @media only screen and (max-width: 460px) {
-          width: 24rem;
+          margin-right: 0;
+          margin-bottom: 2.5rem;
         }
-        
-        &:not(:last-of-type) {
-          margin-right: 5rem;
-
-          @media only screen and (max-width: 460px) {
-            margin-right: 0;
-            margin-bottom: 2.5rem;
-          }
-        }
+      }
     }
   }
+
+  &__buttonsLang-box {
+    position: relative;
+    display: none;
+    margin-left: -1000px;
+  }
 }
+
+.cvMoveRight {
+  animation: moveRight 2s 1  ease-out forwards;
+}
+
+@keyframes moveRight {
+  from {margin-right: 0;}
+  to {margin-right: -1000px;}
+}
+
+.cvMoveLeft {
+  animation: moveLeft .5s 1  ease-out forwards;
+}
+
+@keyframes moveLeft {
+  from {margin-left: -1000px;}
+  to {margin-left: 0;}
+}
+
 
 .skills {
 
