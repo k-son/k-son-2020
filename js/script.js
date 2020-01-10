@@ -12,6 +12,10 @@ const colorMain = styles.getPropertyValue('--color-main');
 const colorSecondary = styles.getPropertyValue('--color-secondary');
 const colorBgMain = styles.getPropertyValue('--color-bg-main');
 
+const cvBtnCv = document.querySelector('.cv__btn--cv');
+const cvBtnCvSpan = cvBtnCv.querySelector(':scope span')
+const cvButtonsCvLang = document.querySelectorAll('.cv__btn--lang');
+
 const skillsBtns = document.querySelectorAll('.skills__btn');
 const skillIcons = document.querySelectorAll('.skills__icon');
 const descriptionBox = document.querySelector('.skills__descriptions-box');
@@ -78,7 +82,7 @@ function fadeHeader() {
 
 window.addEventListener('scroll', fadeHeader);
 
-// scroll dwon button
+// scroll down button
 const scrollDown = document.querySelector('.header__scroll-down');
 
 function hideScrollDownBtn() {
@@ -94,6 +98,15 @@ window.addEventListener('scroll', hideScrollDownBtn);
 scrollDown.addEventListener('click', () => {
   let amount  = viewportHeight * .69;
   window.scrollBy(0, amount);
+})
+
+
+/// cv
+cvBtnCv.addEventListener('click', () => {
+  cvBtnCvSpan.style.width = "100%";
+  cvBtnCv.style.display = "none";
+  cvButtonsCvLang.forEach(e =>
+    e.style.display = "block");
 })
 
 
