@@ -160,13 +160,10 @@
         z-index: -1;
       }
 
-      &:hover span {
+      &:hover span,
+      &:focus span {
         width: 225%;
         height: 35rem;
-      }
-
-      &:active {
-        transform: translateY(5px);
       }
 
       &:active span {
