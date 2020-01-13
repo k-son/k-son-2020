@@ -13,7 +13,7 @@ const colorSecondary = styles.getPropertyValue('--color-secondary');
 const colorBgMain = styles.getPropertyValue('--color-bg-main');
 
 const cvBtnCv = document.querySelector('.cv__btn--cv');
-const cvBtnCvSpan = cvBtnCv.querySelector(':scope span')
+const cvBtnCvSpan = document.querySelector('.cv__btn--cv span');
 const cvButtonsLangBox = document.querySelector('.cv__buttonsLang-box');
 
 const skillsBtns = document.querySelectorAll('.skills__btn');
@@ -109,6 +109,14 @@ cvBtnCv.addEventListener('click', () => {
   cvButtonsLangBox.style.display = "block";
   cvButtonsLangBox.classList.add('cvMoveLeft');
 })
+
+cvBtnCv.addEventListener('mousemove', (e) => {
+  const shape = cvBtnCv.getBoundingClientRect();
+  const x = e.clientX - shape.left + "px";
+  const y = e.clientY - shape.top + "px";
+  cvBtnCvSpan.style.left = x;
+  cvBtnCvSpan.style.top = y;
+});
 
 
 /// tech skills buttons
