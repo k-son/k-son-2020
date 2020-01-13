@@ -121,7 +121,6 @@
   z-index: 1;
 
   @media only screen and (max-width: 460px) {
-    flex-direction: column;
     height: 15rem;
   }
 
@@ -178,9 +177,10 @@
       width: 20rem;
       height: 6rem;
       position: absolute;
-      top: 0;
-      left: 0;
-      margin: 4px;
+      top: 4px;
+      left: 4px;
+      right: -4px;
+      bottom: -4px;
       font-family: 'Fjalla One', sans-serif;
       font-size: 1.6rem;
       line-height: 6rem;
@@ -193,13 +193,9 @@
       background-repeat: no-repeat;
       background-position: 0 0;
       background-size: 20rem 12rem;
-      transition: all .3s linear;
+      transition: all .5s linear;
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
-
-      @media only screen and (max-width: 460px) {
-        width: 24rem;
-      }
 
       &:focus {
         outline: none;
@@ -211,7 +207,11 @@
   &__buttonsLang-box {
     position: relative;
     display: none;
-    margin-left: -1000px;
+    margin-left: -100rem;
+
+    @media only screen and (max-width: 460px) {
+      flex-direction: column;
+    }
   }
 
   &__buttonLang-wrapper {
