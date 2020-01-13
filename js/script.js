@@ -106,7 +106,7 @@ cvBtnCv.addEventListener('click', () => {
   cvBtnCvSpan.style.width = "100%";
   cvBtnCv.classList.add('cvMoveRight');
   window.setTimeout(function() {cvBtnCv.style.display = "none";}, 400);
-  cvButtonsLangBox.style.display = "block";
+  cvButtonsLangBox.style.display = "flex";
   cvButtonsLangBox.classList.add('cvMoveLeft');
 })
 
