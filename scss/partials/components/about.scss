@@ -201,8 +201,9 @@
         width: 24rem;
       }
 
-      &:hover {
-        
+      &:focus {
+        outline: none;
+        background-position: 0 -6rem;
       }
     }
   }
