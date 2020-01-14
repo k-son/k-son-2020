@@ -6,11 +6,14 @@ const headerCaptionShadow = document.querySelector('.header__caption__shadow');
 let viewportHeight;
 let num;
 let heightBreakPoints = [];
+const scrollDown = document.querySelector('.header__scroll-down');
 
+/*
 const styles = getComputedStyle(document.documentElement);
 const colorMain = styles.getPropertyValue('--color-main');
 const colorSecondary = styles.getPropertyValue('--color-secondary');
 const colorBgMain = styles.getPropertyValue('--color-bg-main');
+*/
 
 const cvBtnCv = document.querySelector('.cv__btn--cv');
 const cvBtnCvSpan = document.querySelector('.cv__btn--cv span');
@@ -23,11 +26,8 @@ const descriptions = document.querySelectorAll('.skills__description');
 const iconMarks = document.querySelectorAll('.skills__btn__mark');
 
 const anchorHeader = document.querySelector('.header');
-//const anchorAbout = document.getElementById('h2--about');
 const anchorAbout = document.querySelector('.about');
-//const anchorProjects = document.getElementById('h2--projects');
 const anchorProjects = document.querySelector('.projects');
-//const anchorContact = document.getElementById('h2--contact');
 const anchorContact = document.querySelector('.contact');
 const naviHeader = document.querySelector('.navigation__part__link__h1');
 const naviAbout = document.getElementById('navi-about');
@@ -38,7 +38,6 @@ const projectContainers = document.querySelectorAll('.project__container');
 
 
 /// Header fade on scroll down
-
 function getViewportHeight() {
   viewportHeight = window.innerHeight;
 }
@@ -82,15 +81,10 @@ function fadeHeader() {
 
 window.addEventListener('scroll', fadeHeader);
 
-// scroll down button
-const scrollDown = document.querySelector('.header__scroll-down');
 
+// scroll down button
 function hideScrollDownBtn() {
-  if ((document.body.scrollTop > 30) || (document.documentElement.scrollTop > 30)) {
-    scrollDown.style.display = 'none';
-  } else {
-    scrollDown.style.display = 'block';
-  }
+  (document.body.scrollTop > 30) || (document.documentElement.scrollTop > 30)? scrollDown.style.display = 'none' : scrollDown.style.display = 'block';
 }
 
 window.addEventListener('scroll', hideScrollDownBtn);
@@ -122,7 +116,7 @@ cvBtnCv.addEventListener('mousemove', (e) => {
 /// tech skills buttons
 
 function showFirstSkill() {
-  skillIcons[0].style.color = colorSecondary;
+  skillIcons[0].classList.add('colorSecondary');
   descriptionBox.style.display = "block";
   descriptions[0].style.display = "block";
 }
@@ -130,21 +124,72 @@ showFirstSkill();
 
 for (let skill = 0; skill<skillsBtns.length; skill++) {
   skillsBtns[skill].addEventListener('click', () => {
-    skillIcons.forEach(e => {
-      e.style.color = colorMain;
-      e.style.fill = colorMain;
-    })
+    skillIcons.forEach(e => e.classList.remove('colorSecondary'));
     descriptions.forEach(e => e.style.display = "none");
-    skillIcons[skill].style.color = colorSecondary;
-    skillIcons[skill].style.fill = colorSecondary;
+    skillIcons[skill].classList.add('colorSecondary');
     descriptionBox.style.display = "block";
     descriptions[skill].style.display = "block";
   });
 }
 
 
+ /// navi scroll indication
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    (rect.top <= 0
+      && rect.bottom >= 0)
+    ||
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+    ||
+    (rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+  );
+}
+
+function indicateInNavigation() {
+  if (isElementInViewport(anchorHeader)) {
+    naviHeader.classList.add('colorMain');
+    naviAbout.classList.remove('colorMain');
+    naviProjects.classList.remove('colorMain');
+    naviContact.classList.remove('colorMain');
+  } else if (isElementInViewport(anchorAbout)) {
+    naviHeader.classList.remove('colorMain');
+    naviAbout.classList.add('colorMain');
+    naviProjects.classList.remove('colorMain');
+    naviContact.classList.remove('colorMain');
+  } else if (isElementInViewport(anchorContact)) {
+    naviHeader.classList.remove('colorMain');
+    naviAbout.classList.remove('colorMain');
+    naviProjects.classList.remove('colorMain');
+    naviContact.classList.add('colorMain');
+  } else {
+    naviHeader.classList.remove('colorMain');
+    naviAbout.classList.remove('colorMain');
+    naviProjects.classList.add('colorMain');
+    naviContact.classList.remove('colorMain');
+  }
+}
+
+window.addEventListener('scroll', indicateInNavigation);
+
+
+/// show project containers
+function showProjects() {
+  projectContainers.forEach(el => {
+    if (isElementInViewport(el)) {
+      el.classList.add('opacity-1');
+    }
+  })
+}
+
+window.addEventListener('scroll', showProjects);
+
+
+
 /*
-/// navi scroll indication
+/// navi scroll indication 
 let rectBody;
 let rectAbout;
 let rectProjects;
@@ -196,58 +241,3 @@ function navScrollIndication() {
 
 window.addEventListener('scroll', navScrollIndication);
 */
-
-
- /// navi scroll indication
-function isElementInViewport(el) {
-
-  var rect = el.getBoundingClientRect();
-  return (
-    (rect.top <= 0
-      && rect.bottom >= 0)
-    ||
-    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
-    ||
-    (rect.top >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
-  );
-}
-
-function indicateInNavigation() {
-  if (isElementInViewport(anchorHeader)) {
-    naviHeader.style.color = colorMain;
-    naviAbout.style.color = colorBgMain;
-    naviProjects.style.color = colorBgMain;
-    naviContact.style.color = colorBgMain;
-  } else if (isElementInViewport(anchorAbout)) {
-    naviHeader.style.color = colorBgMain;
-    naviAbout.style.color = colorMain;
-    naviProjects.style.color = colorBgMain;
-    naviContact.style.color = colorBgMain;
-  } else if (isElementInViewport(anchorContact)) {
-    naviHeader.style.color = colorBgMain;
-    naviAbout.style.color = colorBgMain;
-    naviProjects.style.color = colorBgMain;
-    naviContact.style.color = colorMain;
-  } else {
-    naviHeader.style.color = colorBgMain;
-    naviAbout.style.color = colorBgMain;
-    naviProjects.style.color = colorMain;
-    naviContact.style.color = colorBgMain;
-  }
-}
-
-window.addEventListener('scroll', indicateInNavigation);
-
-
-/// show project containers
-function showProjects() {
-  projectContainers.forEach(el => {
-    if (isElementInViewport(el)) {
-      el.classList.add('opacity-1');
-    }
-  })
-}
-
-window.addEventListener('scroll', showProjects);

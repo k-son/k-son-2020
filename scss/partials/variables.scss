@@ -20,3 +20,12 @@
   --padding-nav-item: 1rem;
   --padding-section: 3rem;
 }
+
+.colorSecondary {
+  color: var(--color-secondary) !important;
+  fill: var(--color-secondary) !important;
+}
+
+.colorMain {
+  color: var(--color-main) !important;
+}
