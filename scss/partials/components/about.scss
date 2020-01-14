@@ -295,6 +295,10 @@
     flex-shrink: 0;
     padding: 0 1rem;
 
+    &:focus {
+      outline: none;
+    }
+
     &__mark {
       width: 1rem;
       height: 1rem;
@@ -315,6 +319,7 @@
   &__icon {
     height: 6rem;
     color: var(--color-main);
+    transition: color .2s;
 
     &:hover {
       cursor: pointer;
@@ -327,6 +332,7 @@
       margin-left: var(--margin-common);
       margin-left: 0;
       fill: var(--color-main);
+      transition: fill .2s;
 
       &:hover {
         cursor: pointer;
