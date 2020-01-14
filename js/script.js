@@ -90,7 +90,7 @@ function hideScrollDownBtn() {
 window.addEventListener('scroll', hideScrollDownBtn);
 
 scrollDown.addEventListener('click', () => {
-  let amount  = viewportHeight * .75;
+  let amount  = viewportHeight * .69;
   window.scrollBy(0, amount);
 })
 
