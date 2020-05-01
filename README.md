@@ -1,3 +1,3 @@
 # My portfolio website
 
-Rebuilt, refreshed.
+Showcase of my commercial and private projects.
