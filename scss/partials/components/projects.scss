@@ -3,8 +3,6 @@
   position: relative;
 }
 
-
-
 .project {
 
   &__container {
@@ -67,7 +65,11 @@
       border-radius: 5px;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
 
+      &--roborock-h6 {
+        background-image: url(../img/roborock-h6_d.jpg);
+      }
       &--deerma {
         background-image: url(../img/deerma_d.jpg);
       }
@@ -76,6 +78,9 @@
       }
       &--roshambo {
         background-image: url(../img/roshambo_d.jpg);
+      }
+      &--bedegozjadl {
+        background-image: url(../img/bedegozjadl_d.jpg);
       }
       &--fotograf-slask {
         background-image: url(../img/fotograf-slask_d.jpg);
@@ -118,6 +123,9 @@
       background-size: cover;
       background-position: center;
 
+      &--roborock-h6 {
+        background-image: url(../img/roborock-h6_m.jpg);
+      }
       &--deerma {
         background-image: url(../img/deerma_m.jpg);
       }
@@ -126,6 +134,9 @@
       }
       &--roshambo {
         background-image: url(../img/roshambo_m.jpg);
+      }
+      &--bedegozjadl {
+        background-image: url(../img/bedegozjadl_m.jpg);
       }
       &--fotograf-slask {
         background-image: url(../img/fotograf-slask_m.jpg);
