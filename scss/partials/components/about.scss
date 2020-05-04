@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   @include padding-block;
+  margin-bottom: 8rem;
 
   @media only screen and (max-width: 750px) {
     flex-direction: column;
@@ -114,7 +115,8 @@
   height: 7rem;
   display: flex;
   flex-direction: row;
-  margin: 5rem auto;
+  margin: 0 auto;
+  margin-bottom: 8rem;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -257,7 +259,7 @@
 }
 
 .cvMoveRight {
-  animation: moveRight 2s 1  ease-out forwards;
+  animation: moveRight 3s 1  ease-out forwards;
 }
 
 @keyframes moveRight {
