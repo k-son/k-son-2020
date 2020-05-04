@@ -33,7 +33,7 @@
     letter-spacing: 1px;
     text-transform: capitalize;
     margin-bottom: 2.4rem;
-    color: var(--color-secondary);
+    color: var(--color-secondary--lighter);
     transition: all .2s;
   }
 
@@ -42,6 +42,10 @@
     text-align: center;
     width: 80%;
     margin: 0 auto;
+
+    @media only screen and (max-width: 600px) {
+      width: 85%;
+    }
   }
 
   &__mockup {

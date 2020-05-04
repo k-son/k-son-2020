@@ -7,8 +7,8 @@
   --color-main--lighter: #4CAAAA;
   --color-main--darker: #117373;
   --color-main--darkest: #196363;
-  --color-secondary: #f08080;
-  --color-secondary: #ED6A5A;
+  --color-secondary: #EF7564;
+  --color-secondary--lighter: #F17F6E;
   --color-tertiary: #F0CB80;
 
   --color-text: #555;
@@ -29,5 +29,5 @@
 }
 
 .colorMain {
-  color: var(--color-main) !important;
+  color: var(--color-main--darkest) !important;
 }
