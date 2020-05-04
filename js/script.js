@@ -8,13 +8,6 @@ let num;
 let heightBreakPoints = [];
 const scrollDown = document.querySelector('.header__scroll-down');
 
-/*
-const styles = getComputedStyle(document.documentElement);
-const colorMain = styles.getPropertyValue('--color-main');
-const colorSecondary = styles.getPropertyValue('--color-secondary');
-const colorBgMain = styles.getPropertyValue('--color-bg-main');
-*/
-
 const cvBtnCv = document.querySelector('.cv__btn--cv');
 const cvBtnCvSpan = document.querySelector('.cv__btn--cv span');
 const cvButtonsLangBox = document.querySelector('.cv__buttonsLang-box');
@@ -114,21 +107,27 @@ cvBtnCv.addEventListener('mousemove', (e) => {
 
 
 /// tech skills buttons
-
 function showFirstSkill() {
   skillIcons[0].classList.add('colorSecondary');
-  descriptionBox.style.display = "block";
-  descriptions[0].style.display = "block";
+  descriptions[0].classList.add('displayBlock');
 }
 showFirstSkill();
 
 for (let skill = 0; skill<skillsBtns.length; skill++) {
   skillsBtns[skill].addEventListener('click', () => {
     skillIcons.forEach(e => e.classList.remove('colorSecondary'));
-    descriptions.forEach(e => e.style.display = "none");
+    descriptionBox.classList.add('opacity0');
+    setTimeout(function() {
+      descriptions.forEach(e => e.classList.remove('displayBlock'));
+    }, 200)
     skillIcons[skill].classList.add('colorSecondary');
-    descriptionBox.style.display = "block";
-    descriptions[skill].style.display = "block";
+    setTimeout(function() {
+      descriptions[skill].classList.add('displayBlock');
+      descriptionBox.classList.remove('opacity0');
+    }, 250)
+    if (!isElementInViewport(descriptionBox)) {
+      window.scrollBy(0, 350);
+    }
   });
 }
 
