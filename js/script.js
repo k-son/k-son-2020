@@ -91,10 +91,12 @@ scrollDown.addEventListener('click', () => {
 /// cv
 cvBtnCv.addEventListener('click', () => {
   cvBtnCvSpan.style.width = "100%";
-  cvBtnCv.classList.add('cvMoveRight');
-  window.setTimeout(function() {cvBtnCv.style.display = "none";}, 400);
-  cvButtonsLangBox.style.display = "flex";
-  cvButtonsLangBox.classList.add('cvMoveLeft');
+  cvBtnCv.classList.add('opacity0');
+  window.setTimeout(function() {
+    cvBtnCv.style.display = "none";
+    cvButtonsLangBox.style.display = "flex";
+    cvButtonsLangBox.classList.add('cvMoveInFromLeft');
+  }, 350);
 })
 
 cvBtnCv.addEventListener('mousemove', (e) => {
