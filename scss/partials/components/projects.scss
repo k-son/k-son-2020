@@ -7,10 +7,10 @@
 
   &__container {
     width: 84%;
-    margin: 0 auto 5rem;
+    margin: 0 auto 5.4rem;
     padding: var(--padding-section);
+    color: var(--color-text-projects);
     background-color: var(--color-main--darker);
-    color: var(--color-bg-main);
     border-radius: 5px;
     opacity: 0;
     transform: translateX(-120vw);
@@ -21,18 +21,12 @@
       }
     }
 
-    /*
-    &:hover > .project__h4 {
-      color: var(--color-secondary);
-    }
-    */
-
   &__h4 {
     font-family: 'Fjalla One', sans-serif;
     font-size: 2rem;
     letter-spacing: 1px;
     text-transform: capitalize;
-    margin-bottom: 2.4rem;
+    margin-bottom: var(--margin-common);
     color: var(--color-secondary--lighter);
     transition: all .2s;
   }
@@ -51,10 +45,10 @@
   &__mockup {
     display: flex;
     justify-content: center;
-    margin: 3.2rem 0 1.6rem;
+    margin: var(--margin-common) 0;
 
     & > div:not(:last-child) {
-      margin-right: 3rem;
+      margin-right: var(--margin-common);
 
       @media only screen and (max-width: 650px) {
         margin-right: 2rem;
@@ -187,26 +181,22 @@
   &__links {
     display: flex;
     justify-content: center;
+    margin-bottom: var(--margin-common);
 
     &__link {
-      $padding-hor: 1.2rem;
+      width: 10rem;
       font-family: 'Fjalla One', sans-serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: .8rem $padding-hor;
+      text-align: center;
+      padding: .4rem;
+      border: 2px solid var(--color-text-projects);
+      border-radius: 5px;
       transition: all .2s;
 
       &:not(:last-of-type) {
-        margin-right: 2.4rem;
-      }
-
-      &::after {
-        display: block;
-        content: "";
-        height: 1px;
-        width: calc(100% - ($padding-hor));
-        background-color: var(--color-bg-main);
+        margin-right: var(--margin-common);
       }
 
       &:hover {
@@ -219,9 +209,8 @@
         color: var(--color-secondary);
       }
 
-      &:hover::after,
-      &:focus::after {
-        background-color: var(--color-secondary);
+      &:active {
+        border: 2px solid var(--color-secondary);;
       }
     }
   }
@@ -242,7 +231,7 @@
   }
 }
 
-/// class used in script.js to animate projects containers
+/// class used in script.js to animate projects' containers
 .opacity-1 {
   opacity: 1;
   transform: translateX(0);

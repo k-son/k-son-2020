@@ -1,7 +1,7 @@
 :root {
   --width-website: 1100px;
 
-  --color-bg-main: #ffffff;
+  --color-bg-main: #fff;
   --color-main-porzucony: #4385f0;
   --color-main: #298C8C;
   --color-main--lighter: #4CAAAA;
@@ -12,15 +12,16 @@
   --color-tertiary: #F0CB80;
 
   --color-text: #555;
+  --color-text-projects: #fff;
   --color-h2-header: #c2c2c2;
   --color-h2-section: #ccc;
   --color-navigation: #fff;
   --color-image-border: #eee;
 
-  --margin-common: 3rem;
+  --margin-common: 3.2rem;
   --margin-section-top: 8rem;
   --padding-nav-item: 1rem;
-  --padding-section: 3rem;
+  --padding-section: 3.2rem;
 }
 
 .colorSecondary {
