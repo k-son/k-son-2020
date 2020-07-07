@@ -67,6 +67,12 @@
       background-position: center;
       background-repeat: no-repeat;
 
+      &--roborock-compare {
+        background-image: url(../img/roborock-compare_d.jpg);
+      }
+      &--roborock-s6maxv{
+        background-image: url(../img/roborock-s6maxv_d.jpg);
+      }
       &--roborock-h6 {
         background-image: url(../img/roborock-h6_d.jpg);
       }
@@ -123,6 +129,12 @@
       background-size: cover;
       background-position: center;
 
+      &--roborock-compare {
+        background-image: url(../img/roborock-compare_m.jpg);
+      }
+      &--roborock-s6maxv {
+        background-image: url(../img/roborock-s6maxv_m.jpg);
+      }
       &--roborock-h6 {
         background-image: url(../img/roborock-h6_m.jpg);
       }
