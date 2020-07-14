@@ -13,6 +13,7 @@
     background-color: var(--color-main--darker);
     border-radius: 5px;
     opacity: 0;
+    overflow: hidden;
     transform: translateX(-120vw);
     transition: transform .8s, opacity 2s;
 
@@ -243,7 +244,66 @@
   }
 }
 
-/// class used in script.js to animate projects' containers
+
+
+//// Helper classes
+
+// add a badge for personal projects
+.personal {
+
+  &::before {
+      position: absolute;
+      top: 9rem;
+      right: -3.6rem;
+      content: "personal";
+      width: 22rem;
+      height: 2.8rem;
+      font-size: 1.4rem;
+      line-height: 2.8rem;
+      letter-spacing: 1px;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--color-main--darkest);
+      background-color: var(--color-bg-main);
+      transform: rotate(35deg);
+      transform-origin: right;
+  
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+}
+
+// add a badge for commercial projects
+.commercial {
+
+  &::before {
+      position: absolute;
+      top: 9rem;
+      right: -3.6rem;
+      content: "commercial";
+      width: 22rem;
+      height: 2.8rem;
+      font-size: 1.4rem;
+      line-height: 2.8rem;
+      letter-spacing: 1px;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--color-main--darkest);
+      background-color: var(--color-bg-main);
+      transform: rotate(35deg);
+      transform-origin: right;
+  
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+}
+
+
+
+//// class used in script.js to animate projects' containers
+
 .opacity-1 {
   opacity: 1;
   transform: translateX(0);
