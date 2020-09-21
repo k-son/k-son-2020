@@ -30,6 +30,36 @@ const naviContact = document.getElementById('navi-contact');
 const projectContainers = document.querySelectorAll('.project__container');
 
 
+/// Helper functions
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    (rect.top <= 0
+      && rect.bottom >= 0)
+    ||
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+    ||
+    (rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+  );
+}
+
+function debounced(delay, fn) {
+  let timerId;
+
+  return function (...args) {
+      if (timerId) {
+          clearTimeout(timerId);
+      }
+      timerId = setTimeout(() => {
+          fn(...args);
+          timerId = null;
+      }, delay);
+  }
+}
+
+
 /// Header fade on scroll
 function getViewportHeight() {
   viewportHeight = window.innerHeight;
@@ -134,22 +164,8 @@ for (let skill = 0; skill<skillsBtns.length; skill++) {
 }
 
 
- /// navi scroll indication
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    (rect.top <= 0
-      && rect.bottom >= 0)
-    ||
-    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
-    ||
-    (rect.top >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
-  );
-}
-
-function indicateInNavigation() {
+/// navi scroll indication
+const indicateInNavigation = debounced(150, function() {
   if (isElementInViewport(anchorHeader)) {
     naviHeader.classList.add('colorMain');
     naviAbout.classList.remove('colorMain');
@@ -171,18 +187,18 @@ function indicateInNavigation() {
     naviProjects.classList.add('colorMain');
     naviContact.classList.remove('colorMain');
   }
-}
+})
 
 window.addEventListener('scroll', indicateInNavigation);
 
 
 /// show project containers
-function showProjects() {
+const showProjects = debounced(200, function() {
   projectContainers.forEach(el => {
     if (isElementInViewport(el)) {
       el.classList.add('opacity-1');
     }
   })
-}
+});
 
 window.addEventListener('scroll', showProjects);
