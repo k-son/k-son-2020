@@ -400,7 +400,6 @@
   }
 
   &__description {
-    text-align: center;
     display: none;
 
     &__h5 {
@@ -408,12 +407,15 @@
       font-size: 1.8rem;
       font-weight: 500;
       letter-spacing: 1px;
+      text-align: center;
       margin-bottom: 1.2rem;
       color: var(--color-bg-main);
     }
 
     &__para {
+      max-width: 60rem;
       font-size: 1.8rem;
+      text-align: left;
       color: var(--color-bg-main);
     }
   }
