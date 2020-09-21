@@ -30,7 +30,7 @@ const naviContact = document.getElementById('navi-contact');
 const projectContainers = document.querySelectorAll('.project__container');
 
 
-/// Header fade on scroll down
+/// Header fade on scroll
 function getViewportHeight() {
   viewportHeight = window.innerHeight;
 }
