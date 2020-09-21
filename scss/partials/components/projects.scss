@@ -62,7 +62,7 @@
       max-width: calc(18rem * 1.7777777777777777);
       height: 18vw;
       max-height: 18rem;
-      border: 8px solid var(--color-main--lighter);
+      border: 6px solid var(--color-main--lighter);
       border-radius: 5px;
       background-size: cover;
       background-position: center;
@@ -96,8 +96,8 @@
       &--tunegrips {
         background-image: url(../img/tunegrips_d.jpg);
       }
-      &--what {
-        display: none;
+      &--whattoplay {
+        background-image: url(../img/whattoplay_react_d.png);
       }
       &--weinstall {
         background-image: url(../img/weinstall_d.jpg);
@@ -125,7 +125,7 @@
       max-width: calc(18rem * 0.75);
       height: 18vw;
       max-height: 18rem;
-      border: 8px solid var(--color-main--lighter);
+      border: 6px solid var(--color-main--lighter);
       border-radius: 5px;
       background-size: cover;
       background-position: center;
@@ -158,8 +158,8 @@
       &--tunegrips {
         background-image: url(../img/tunegrips_m.jpg);
       }
-      &--what {
-        background-image: url(../img/what_black_m.jpg);
+      &--whattoplay {
+        background-image: url(../img/whattoplay_react_m.png);
       }
       &--weinstall {
         background-image: url(../img/weinstall_m.jpg);
