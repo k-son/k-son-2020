@@ -336,14 +336,19 @@
         fill: var(--color-secondary);
       }
     }
+
     &--bootstrap {
       height: 7rem;
       margin-left: -.3rem;
       margin-right: -.3rem;
     }
 
+    &--react {
+      fill: var(--color-main);
+    }
+
     &--jquery {
-      margin-left: -2.2rem;
+      margin-left: -2.4rem;
       margin-right: -2.2rem;
     }
   }
