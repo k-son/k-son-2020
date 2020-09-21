@@ -297,6 +297,7 @@
     }
 
     &__mark {
+      display: inline-block;
       width: 1rem;
       height: 1rem;
       border-radius: 50%;
@@ -332,7 +333,6 @@
       transition: fill .2s;
 
       &:hover {
-        
         fill: var(--color-secondary);
       }
     }
