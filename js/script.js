@@ -37,7 +37,7 @@ function getViewportHeight() {
 getViewportHeight();
 window.addEventListener('resize', getViewportHeight);
 
-num = viewportHeight / 30; // increase the number after division sing if you want the header to fade sooner
+num = viewportHeight / 30; // increase the number after division sign if you want the header to fade sooner
 for (let i=1; i<=30 ;i++) {
   heightBreakPoints.push(num*i);
 }
