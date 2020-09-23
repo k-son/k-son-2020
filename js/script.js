@@ -2,12 +2,10 @@
   "use strict";
 
   const header = document.querySelector('.header');
-  const headerCaption = document.querySelector('.header__caption__h1');
-  const headerCaptionShadow = document.querySelector('.header__caption__shadow');
   let viewportHeight;
   let num;
   let heightBreakPoints = [];
-  const scrollDown = document.querySelector('.header__scroll-down');
+  const scrollDownBtn = document.querySelector('.header__scroll-down');
   
   const cvBtnCv = document.querySelector('.cv__btn--cv');
   const cvBtnCvSpan = document.querySelector('.cv__btn--cv span');
@@ -17,13 +15,11 @@
   const skillIcons = document.querySelectorAll('.skills__icon');
   const descriptionBox = document.querySelector('.skills__descriptions-box');
   const descriptions = Array.from(document.querySelectorAll('.skills__description'));
-  const iconMarks = document.querySelectorAll('.skills__btn__mark');
   
   const anchorHeader = document.querySelector('.header');
   const anchorAbout = document.querySelector('.about');
-  const anchorProjects = document.querySelector('.projects');
   const anchorContact = document.querySelector('.contact');
-  const naviHeader = document.querySelector('.navigation__part__link__h1');
+  const naviHeader = document.getElementById('navi-home');
   const naviAbout = document.getElementById('navi-about');
   const naviProjects = document.getElementById('navi-projects');
   const naviContact = document.getElementById('navi-contact');
@@ -108,12 +104,12 @@
   
   //// Scroll down button
   function hideScrollDownBtn() {
-    (document.body.scrollTop > 30) || (document.documentElement.scrollTop > 30)? scrollDown.style.display = 'none' : scrollDown.style.display = 'block';
+    (document.body.scrollTop > 30) || (document.documentElement.scrollTop > 30)? scrollDownBtn.style.display = 'none' : scrollDownBtn.style.display = 'block';
   }
   
   window.addEventListener('scroll', hideScrollDownBtn);
   
-  scrollDown.addEventListener('click', () => {
+  scrollDownBtn.addEventListener('click', () => {
     let amount  = viewportHeight * .69;
     window.scrollBy(0, amount);
   })
