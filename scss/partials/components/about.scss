@@ -311,7 +311,6 @@
     &:focus > &__mark {
       visibility: visible;
     }
-
   }
 
   &__icon {
@@ -325,12 +324,14 @@
     }
 
     &--ps, 
-    &--bootstrap {
+    &--bootstrap,
+    &--react,
+    &--jquery,
+    &--wordpress {
       height: 6rem;
       margin-left: var(--margin-common);
       margin-left: 0;
       fill: var(--color-main);
-      transition: fill .2s;
 
       &:hover {
         fill: var(--color-secondary);
@@ -339,26 +340,13 @@
 
     &--bootstrap {
       height: 7rem;
-      margin-left: -.3rem;
+      margin-left: -.5rem;
       margin-right: -.3rem;
-    }
-
-    &--react {
-      fill: var(--color-main);
-
-      &:hover {
-        fill: var(--color-secondary);
-      }
     }
 
     &--jquery {
       margin-left: -2.4rem;
       margin-right: -2.2rem;
-      fill: var(--color-main);
-
-      &:hover {
-        fill: var(--color-secondary);
-      }
     }
   }
 
