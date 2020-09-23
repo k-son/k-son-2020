@@ -208,4 +208,4 @@
   })
   
   window.addEventListener('scroll', showProjects);
-}());
+})();
