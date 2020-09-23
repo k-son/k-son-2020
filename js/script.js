@@ -15,7 +15,7 @@ const cvButtonsLangBox = document.querySelector('.cv__buttonsLang-box');
 const skillsBtns = document.querySelectorAll('.skills__btn');
 const skillIcons = document.querySelectorAll('.skills__icon');
 const descriptionBox = document.querySelector('.skills__descriptions-box');
-const descriptions = document.querySelectorAll('.skills__description');
+const descriptions = Array.from(document.querySelectorAll('.skills__description'));
 const iconMarks = document.querySelectorAll('.skills__btn__mark');
 
 const anchorHeader = document.querySelector('.header');
@@ -30,7 +30,7 @@ const naviContact = document.getElementById('navi-contact');
 const projectContainers = document.querySelectorAll('.project__container');
 
 
-/// Helper functions
+//// Helper functions
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
   return (
@@ -60,7 +60,7 @@ function debounced(delay, fn) {
 }
 
 
-/// Header fade on scroll
+//// Header fade on scroll
 function getViewportHeight() {
   viewportHeight = window.innerHeight;
 }
@@ -105,7 +105,7 @@ function fadeHeader() {
 window.addEventListener('scroll', fadeHeader);
 
 
-// scroll down button
+//// Scroll down button
 function hideScrollDownBtn() {
   (document.body.scrollTop > 30) || (document.documentElement.scrollTop > 30)? scrollDown.style.display = 'none' : scrollDown.style.display = 'block';
 }
@@ -118,7 +118,7 @@ scrollDown.addEventListener('click', () => {
 })
 
 
-/// cv
+//// CV
 cvBtnCv.addEventListener('click', () => {
   cvBtnCvSpan.style.width = "100%";
   cvBtnCv.classList.add('opacity0');
@@ -138,33 +138,38 @@ cvBtnCv.addEventListener('mousemove', (e) => {
 });
 
 
-/// tech skills buttons
+//// Tech skills buttons
+// Show first skill on page load
 function showFirstSkill() {
   skillIcons[0].classList.add('colorSecondary');
   descriptions[0].classList.add('displayBlock');
 }
 showFirstSkill();
 
-for (let skill = 0; skill<skillsBtns.length; skill++) {
-  skillsBtns[skill].addEventListener('click', () => {
-    skillIcons.forEach(e => e.classList.remove('colorSecondary'));
-    descriptionBox.classList.add('opacity0');
-    setTimeout(function() {
-      descriptions.forEach(e => e.classList.remove('displayBlock'));
+
+// Show skill description on button press
+skillsBtns.forEach(btn => btn.addEventListener("click", function() {
+  const skill = this.getAttribute('data-skill');
+  const icon = this.lastElementChild;
+  const description = descriptions.find(el => el.dataset.skill === skill);
+
+  skillIcons.forEach(ico => ico.classList.remove('colorSecondary'));
+  descriptionBox.classList.add('opacity0');
+  setTimeout(function() {
+    descriptions.forEach(des => des.classList.remove('displayBlock'));
     }, 200)
-    skillIcons[skill].classList.add('colorSecondary');
-    setTimeout(function() {
-      descriptions[skill].classList.add('displayBlock');
-      descriptionBox.classList.remove('opacity0');
+  icon.classList.add('colorSecondary');
+  setTimeout(function() {
+    description.classList.add('displayBlock');
+    descriptionBox.classList.remove('opacity0');
     }, 250)
-    if (!isElementInViewport(descriptionBox)) {
-      window.scrollBy(0, 350);
-    }
-  });
-}
+  if (!isElementInViewport(descriptionBox)) {
+    window.scrollBy(0, 350);
+  }
+}))
 
 
-/// navi scroll indication
+//// Navi scroll indication
 const indicateInNavigation = debounced(150, function() {
   if (isElementInViewport(anchorHeader)) {
     naviHeader.classList.add('colorMain');
@@ -192,7 +197,7 @@ const indicateInNavigation = debounced(150, function() {
 window.addEventListener('scroll', indicateInNavigation);
 
 
-/// show project containers
+//// Slide in projects
 const showProjects = debounced(200, function() {
   projectContainers.forEach(el => {
     if (isElementInViewport(el)) {
