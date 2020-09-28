@@ -6,11 +6,110 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>500 internal server error</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Fjalla+One%7CRoboto:400,500&display=swap&subset=latin-ext" rel="stylesheet">
+  <style>
+    .error__container {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+               "Helvetica Neue", sans-serif;
+      width: 80%;
+      height: 80vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 24px;
+    }
 
-  <link rel="stylesheet" type="text/css" href="css/main.min.css">
+    .error__img {
+      max-height: 300px;
+      max-width: 80%;
+      min-height: 100px;
+      margin-top: 4vh;
+      margin-bottom: 4vh;
+    }
+
+    .error__error {
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 1.2;
+      text-align: center;
+      text-transform: capitalize;
+      color: #ef7564;
+      margin: -24px 12px;
+    }
+
+    .error__error span {
+      display: inline-block;
+      line-height: 1;
+      color: #fff;
+      background-color: #ef7564;
+      padding: 4px 8px;
+      border-radius: 5px;
+    }
+
+    .error__text {
+      line-height: 1.2;
+      padding: 24px;
+      margin-bottom: 12px;
+    }
+
+    .error__heading {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .error__para {
+      font-size: 16px;
+    }
+
+    .error__contact-link {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      text-decoration: none;
+      color: #196363;
+      margin-top: 8px;
+    }
+
+    .error__contact-link:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .error__contact-link:active {
+      color: #ef7564;
+    }
+
+    .error__envelope {
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    @media only screen and (min-width: 601px) {
+      .error__error {
+        font-size: 54px;
+      }
+
+      .error__heading {
+        font-size: 32px;
+      }
+
+      .error__para {
+        font-size: 20px;
+      }
+
+      .error__contact-link {
+        font-size: 20px;
+      }
+
+      .error__envelope {
+        height: 20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
   <div class="error__container">
     <svg
@@ -618,7 +717,7 @@
     <div class="error__text">
       <h3 class="error__heading">Ooops, something went wrong.</h3>
       <p class="error__para">Try to refresh this page or fell free to contact me:</p>
-      <a href="mailto:kson.eu@gmail.com" class="error__contact-link contact__mail" aria-label="E-mail address"><svg class="contact__mail__envelope" role="img"  alt="Envelope icon" aria-label="Envelope icon" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg> kson.eu@gmail.com</a>
+      <a href="mailto:kson.eu@gmail.com" class="error__contact-link" aria-label="E-mail address"><svg class="error__envelope" role="img"  alt="Envelope icon" aria-label="Envelope icon" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg> kson.eu@gmail.com</a>
     </div>
   </div>
 </body>
