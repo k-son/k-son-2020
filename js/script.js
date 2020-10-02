@@ -72,7 +72,7 @@
   function fadeHeader() {
     let yOffset = window.pageYOffset;
   
-    if (yOffset > heightBreakPoints[0] && yOffset <heightBreakPoints[1]) {
+    if (yOffset > heightBreakPoints[0] && yOffset < heightBreakPoints[1]) {
       header.style.opacity = .8;
       header.style.height = "90vh";
     } else if (yOffset >= heightBreakPoints[1] && yOffset < heightBreakPoints[2]) {
@@ -104,7 +104,7 @@
   
   //// Scroll down button
   function hideScrollDownBtn() {
-    (document.body.scrollTop > 30) || (document.documentElement.scrollTop > 30)? scrollDownBtn.style.display = 'none' : scrollDownBtn.style.display = 'block';
+    (document.body.scrollTop > 30) || (document.documentElement.scrollTop > 30) ? scrollDownBtn.style.display = 'none' : scrollDownBtn.style.display = 'block';
   }
   
   window.addEventListener('scroll', hideScrollDownBtn);
