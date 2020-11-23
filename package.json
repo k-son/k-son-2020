@@ -23,7 +23,9 @@
     "gulp-uglify": "^3.0.2",
     "pump": "^3.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/k-son/k-son-2020.git"
