@@ -310,11 +310,19 @@
     &:hover {
       cursor: pointer;
       background-color: var(--color-secondary);
+
+      & img {
+        opacity: 1;
+      }
     }
 
     &:focus {
       outline: none;
       background-color: var(--color-secondary);
+
+      & img {
+        opacity: 1;
+      }
     }
 
   }
@@ -323,6 +331,7 @@
     display: block;
     width: 40rem;
     height: auto;
+    opacity: .8;
 
     @media only screen and (max-width: 750px) {
       max-width: 80%;
