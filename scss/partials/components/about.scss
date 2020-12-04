@@ -490,6 +490,27 @@
       font-size: 1.8rem;
       text-align: left;
       color: var(--color-bg-main);
+
+      & a {
+        border-bottom: 1px solid var(--color-bg-main);
+        transition: all .2s;
+
+        &:focus {
+          outline: none;
+        }
+        
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          color: var(--color-secondary);
+          border-color: var(--color-secondary);
+        }
+
+        &:active {
+          color: var(--color-bg-main);
+          border-color: var(--color-bg-main);
+        }
+      }
     }
   }
 }
