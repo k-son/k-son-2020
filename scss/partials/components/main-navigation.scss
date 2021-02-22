@@ -14,30 +14,26 @@
     display: flex;
     justify-content: space-between;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 400;
     vertical-align: middle;
 
-    @media only screen and (max-width: 400px) {
-      font-size: 2rem;
+    @media only screen and (min-width: 400px) {
+      font-size: 2.2rem;
     }
   }
 
   &__part {
-
-    &--home {
-
-    }
 
     &--sections ul {
       display: flex;
       text-transform: capitalize;
 
       & li:not(:last-of-type) h3 {
-        margin-right: 1rem;
+        margin-right: .4rem;
 
-        @media only screen and (max-width: 400px) {
-          margin-right: .4rem;
+        @media only screen and (min-width: 400px) {
+          margin-right: 1rem;
         }
       }
     }

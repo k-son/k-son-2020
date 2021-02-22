@@ -17,8 +17,8 @@
     font-size: 2rem;
     line-height: 1.2;
     font-weight: 800;
-    letter-spacing: .6rem;
-    word-spacing: .4rem;
+    letter-spacing: .3rem;
+    word-spacing: .2rem;
     background-color: var(--color-h2-header);
     color: transparent;
     background-image: linear-gradient(to bottom right, var(--color-h2-header), var(--color-h2-header) 25%, rgb(245, 245, 245), var(--color-h2-header) 75%, var(--color-h2-header));
@@ -36,16 +36,16 @@
     animation-direction: alternate;
     animation-play-state: running;
 
-    @media only screen and (max-width: 400px) {
-      letter-spacing: .3rem;
-      word-spacing: .2rem;
+    @media only screen and (min-width: 400px) {
+      letter-spacing: .6rem;
+      word-spacing: .4rem;
     }
   }
 
   &__caption {
     position: relative;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 18vw;
+    font-size: 22vw;
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: .5vw;
@@ -53,8 +53,8 @@
     text-transform: uppercase;
     margin: 5rem 0;
 
-    @media only screen and (max-width: 700px) {
-      font-size: 22vw;
+    @media only screen and (min-width: 700px) {
+      font-size: 18vw;
     }
 
     &__shadow {

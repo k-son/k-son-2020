@@ -1,5 +1,4 @@
 .projects {
-  margin-top: var(--margin-section-top);
   position: relative;
 }
 
@@ -35,11 +34,11 @@
   &__description {
     font-size: 1.8rem;
     text-align: center;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
 
-    @media only screen and (max-width: 600px) {
-      width: 85%;
+    @media only screen and (min-width: 600px) {
+      width: 80%;
     }
   }
 
@@ -47,22 +46,22 @@
     display: flex;
     justify-content: center;
     margin: var(--margin-common) 0;
-
+   
     & > div:not(:last-child) {
-      margin-right: var(--margin-common);
-
-      @media only screen and (max-width: 650px) {
-        margin-right: 2rem;
+      margin-right: 2rem;
+      
+      @media only screen and (min-width: 650px) {
+        margin-right: var(--margin-common);
       }
     }
 
     &__desktop {
       // 16:9 proportions
-      width: calc(18vw * 1.7777777777777777);
+      width: calc(22vw * 1.7777777777777777);;
+      height: 22vw;
       max-width: calc(18rem * 1.7777777777777777);
-      height: 18vw;
       max-height: 18rem;
-      border: 6px solid var(--color-main--lighter);
+      border: 4px solid var(--color-main--lighter);
       border-radius: 5px;
       background-size: cover;
       background-position: center;
@@ -108,24 +107,24 @@
       &--chef {
         background-image: url(../img/chef_d.jpg);
       }
-
-      @media only screen and (max-width: 650px) {
-        border: 4px solid var(--color-main--lighter);
+      
+      @media only screen and (min-width: 450px) {
+        width: calc(18vw * 1.7777777777777777);
+        height: 18vw;
       }
 
-      @media only screen and (max-width: 450px) {
-        width: calc(22vw * 1.7777777777777777);;
-        height: 22vw;
+      @media only screen and (min-width: 650px) {
+        border: 8px solid var(--color-main--lighter);
       }
     }
 
     &__mobile {
       // 3:4 proportions
-      width: calc(18vw * 0.75);
+      width: calc(22vw * 0.75);
       max-width: calc(18rem * 0.75);
-      height: 18vw;
+      height: 22vw;
       max-height: 18rem;
-      border: 6px solid var(--color-main--lighter);
+      border: 4px solid var(--color-main--lighter);
       border-radius: 5px;
       background-size: cover;
       background-position: center;
@@ -171,23 +170,23 @@
         background-image: url(../img/chef_m.jpg);
       }
 
-      @media only screen and (max-width: 650px) {
-        border: 4px solid var(--color-main--lighter);
+      @media only screen and (min-width: 450px) {
+        width: calc(18vw * 0.75);
+        height: 18vw;
       }
 
-      @media only screen and (max-width: 450px) {
-        width: calc(22vw * 0.75);
-        height: 22vw;
+      @media only screen and (min-width: 650px) {
+        border: 8px solid var(--color-main--lighter);
       }
     }
   }
 
   &__container:nth-of-type(2n) > &__mockup > &__mockup__desktop,
   &__container:nth-of-type(2n) > &__mockup > &__mockup__mobile {
-    border: 8px solid var(--color-main--darkest);
+    border: 4px solid var(--color-main--darkest);
 
-    @media only screen and (max-width: 650px) {
-      border: 4px solid var(--color-main--darkest);
+    @media only screen and (min-width: 650px) {
+      border: 8px solid var(--color-main--darkest);
     }
   }
   
@@ -245,13 +244,11 @@
 }
 
 
-
-//// Helper classes
-
 // add a badge for personal projects
 .personal {
 
   &::before {
+      display: none;
       position: absolute;
       top: 9rem;
       right: -3.6rem;
@@ -268,8 +265,8 @@
       transform: rotate(35deg);
       transform-origin: right;
   
-      @media only screen and (max-width: 600px) {
-        display: none;
+      @media only screen and (min-width: 600px) {
+        display: block;
       }
     }
 }
@@ -278,28 +275,28 @@
 .commercial {
 
   &::before {
-      position: absolute;
-      top: 9rem;
-      right: -3.6rem;
-      content: "commercial";
-      width: 22rem;
-      height: 2.8rem;
-      font-size: 1.4rem;
-      line-height: 2.8rem;
-      letter-spacing: 1px;
-      text-align: center;
-      text-transform: uppercase;
-      color: var(--color-main--darkest);
-      background-color: var(--color-bg-main);
-      transform: rotate(35deg);
-      transform-origin: right;
-  
-      @media only screen and (max-width: 600px) {
-        display: none;
-      }
-    }
-}
+    display: none;
+    position: absolute;
+    top: 9rem;
+    right: -3.6rem;
+    content: "commercial";
+    width: 22rem;
+    height: 2.8rem;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-main--darkest);
+    background-color: var(--color-bg-main);
+    transform: rotate(35deg);
+    transform-origin: right;
 
+    @media only screen and (min-width: 600px) {
+      display: block;
+    }
+  }
+}
 
 
 //// class used in script.js to animate projects' containers
