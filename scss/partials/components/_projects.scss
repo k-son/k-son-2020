@@ -5,7 +5,7 @@
 .project {
 
   &__container {
-    width: 84%;
+    width: var(--width-content);
     margin: 0 auto 5.4rem;
     padding: var(--padding-section);
     color: var(--color-text-projects);
@@ -196,15 +196,18 @@
     margin-bottom: var(--margin-common);
 
     &__link {
+      display: block;
       width: 10rem;
+      height: 4rem;
       font-family: 'Fjalla One', sans-serif;
-      font-size: 1.8rem;
+      font-size: 2rem;
+      line-height: 4rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       text-align: center;
-      padding: .4rem;
       border: 2px solid var(--color-text-projects);
       border-radius: 5px;
+      cursor: pointer;
       transition: all .2s;
 
       &:not(:last-of-type) {
@@ -212,7 +215,6 @@
       }
 
       &:hover {
-        cursor: pointer;
         color: var(--color-secondary);
       }
 
