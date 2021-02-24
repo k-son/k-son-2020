@@ -57,6 +57,7 @@
 
   <link rel="stylesheet" type="text/css" href="css/main.min.css">
   <script src="./js/script.js" defer></script>
+  <script src="./js/contactForm.js" defer></script>
 </head>
 
 <body>
@@ -510,18 +511,22 @@
       <div class="form__container">
         <div class="form__cta">You me write yes my friend.</div>
         <div class="form__image-box"></div>
-        <div class="form__form" method="post" action="">
+        <div class="form__form" id="contactForm" method="post" action="">
           <div class="form__row">
             <label class="form__label" for="name">Name <span class="form__label-note">(required)</span></label>
-            <input class="form__input" id="name" name="name" type="text" required>
+            <input class="form__input" id="name" name="name" type="text" required data-error-text="This field is required.">
           </div>
           <div class="form__row">
             <label class="form__label" for="email">E-mail <span class="form__label-note">(required)</span></label>
-            <input class="form__input" id="email" name="email" type="email" required>
+            <input class="form__input" id="email" name="email" type="email" required data-error-text="This e-mail address  is invalid.">
           </div>
           <div class="form__row">
             <label class="form__label" for="phone">Phone</label>
             <input class="form__input" id="phone" name="phone" type="tel">
+          </div>
+          <div class="form__row honey-row">
+            <label for="honey">If you are a human, please leave this field blank</label>
+            <input type="text" name="honey">
           </div>
           <div class="form__row">
             <label class="form__label" for="subject">Subject</label>
@@ -529,7 +534,12 @@
           </div>
           <div class="form__row">
             <label class="form__label" for="message">Message <span class="form__label-note">(required)</span></label>
-            <textarea class="form__textarea" id="message" name="message" rows="5" required></textarea>
+            <textarea class="form__textarea" id="message" name="message" rows="5" required data-error-text="This field is required."></textarea>
+          </div>
+          <div class="form__row">
+            <div class="form__info-box">
+              <p class="form__info-text">Your message was sent. Thank you!</p>
+            </div>
           </div>
           <div class="form__row">
             <button class="form__submit" type="submit">Submit</button>

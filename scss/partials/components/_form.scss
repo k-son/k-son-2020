@@ -1,6 +1,5 @@
 .form {
 
-
   &__container {
     display: grid;
     grid-template-columns: 100%;
@@ -80,10 +79,7 @@
   
   &__textarea {
     max-width: 48rem;
-
-    @media screen and (min-width: 750px) {
-      resize: vertical;
-    }
+    resize: vertical;
   }
 
   &__input,
@@ -98,6 +94,20 @@
     @media screen and (min-width: 750px) {
       max-width: unset;
     }
+  }
+
+  &__info-box {
+    position: relative;
+    padding: .8rem 1.2rem;
+    background: var(--color-secondary);
+    border-radius: 5px;
+    //transform: translateX(80rem);
+  }
+
+  &__info-text {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    color: #fff;
   }
 
   &__submit {
@@ -116,7 +126,6 @@
     border: 2px solid var(--color-main);
     border-radius: 5px;
     margin-left: auto;
-    margin-top: 3.2rem;
     cursor: pointer;
     transition: all .2s;
 
@@ -134,5 +143,113 @@
       color: #fff;
       background-color: var(--color-secondary);
     } 
+  }
+}
+
+/* Honeypot */
+.honey-row {
+  display: none;
+}
+
+/* Form Validation */
+.form__input.field-error,
+.form__textarea.field-error {
+  border-color: var(--color-secondary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,99,71, 0.3);
+}
+
+.form-error-text {
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.form-error-inline .form-error-text {
+  display: none;
+}
+
+
+.form-send-success,
+.form-send-error {
+  font-family: sans-serif;
+  padding: 3em;
+  border: 1px solid #ddd;
+}
+
+.form-send-success strong,
+.form-send-error strong {
+    display: block;
+    font-size: 1.5em;
+    color: hotpink;
+    margin-bottom: 0.3em;
+}
+
+.form-send-success span,
+.form-send-error span {
+
+}
+
+/* success */
+.form-send-success {
+  font-family: sans-serif;
+  text-align:center;
+  font-size:2rem;
+  font-weight:bold;
+  border:1px solid #eee;
+  color:#333;
+  padding:10rem 0;
+  margin:3rem auto;
+  max-width:40rem;
+}
+
+.form-send-success strong {
+  display:block;
+  margin-bottom:0.5rem;
+}
+
+.form-send-success span {
+  font-size:1rem;
+  color:#888;
+  font-weight:normal;
+  display: block;
+}
+
+/* error */
+.form .send-error {
+  display:inline-block;
+  font-family: sans-serif;
+  padding:1rem 2rem;
+  color:red;
+}
+
+/* submit button animation */
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity:0.5;
+}
+
+.loading::after {
+  content:"";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0,0,0,0.7);
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: rotateSingleLoading 0.3s infinite linear;
+  z-index: 10;
+}
+
+@keyframes rotateSingleLoading {
+  from {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+      transform: translate(-50%, -50%) rotate(360deg);
   }
 }
