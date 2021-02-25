@@ -3,7 +3,7 @@ function testText(field, lng) {
 }
   
 function testEmail(field) {
-  const reg = /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$/;
+  const reg = /[^@\s]+@[^@\s]+\.[^@\s]+/;
   return reg.test(field.value);
 };
   
@@ -21,16 +21,30 @@ function markFieldAsError(field, show) {
 //pobieram elementy
 //------------------------
 const form = document.querySelector("#contactForm");
+const formInput = form.querySelectorAll('input');
 const inputName = form.querySelector("input[name=name]");
 const inputEmail = form.querySelector("input[name=email]");
-const formMessage = form.querySelector(".form__textarea");
-
+const formMessage = form.querySelector("textarea");
+const formInfoBox = document.querySelector(".form__info-box")
+const formInfoText = document.querySelector(".form__info-text");
+const formErrorBox = document.querySelector(".form__error-box");
 
 //------------------------
 //etap 1 : podpinam eventy
 //------------------------
 inputName.addEventListener("input", e => markFieldAsError(e.target, !testText(e.target)));
 inputEmail.addEventListener("input", e => markFieldAsError(e.target, !testEmail(e.target)));
+formMessage.addEventListener("input", e => markFieldAsError(e.target, !testText(e.target)));
+
+// schowaj box z informacją gdy użytkownik zacznie ponownie uzupełniać formularz
+/* formInput.forEach(el => el.addEventListener("keydown", () => {
+    formInfoBox.classList.add("hidden");
+    formInfoText.textContent = "";
+}));
+formMessage.addEventListener("keydown", () => {
+    formInfoBox.classList.add("hidden");
+    formInfoText.textContent = "";
+}); */
 
 
 form.addEventListener("submit", e => {
@@ -43,20 +57,26 @@ form.addEventListener("submit", e => {
   //------------------------
 
   //chowam błędy
-  for (const el of [inputName, inputEmail]) {
-      markErrorField(el, false);
+  for (const el of [inputName, inputEmail, formMessage]) {
+    markFieldAsError(el, false);
   }
 
   //i testuję w razie czego zaznaczając pola
-  if (!testText(inputName, 3)) {
-      markFieldAsError(inputName, true);
-      formErrors.push("Wypełnij poprawnie pole z imieniem");
+  if (!testText(inputName, 2)) {
+    markFieldAsError(inputName, true);
+    formErrors.push("Your name must contain at least 2 characters.");
   }
 
   if (!testEmail(inputEmail)) {
       markFieldAsError(inputEmail, true);
-      formErrors.push("Wypełnij poprawnie pole z emailem");
+      formErrors.push("Please fill in the e-mail field correctly.");
   }
+
+  if (!testText(formMessage, 2)) {
+    markFieldAsError(inputName, true);
+    formErrors.push("Your message must be at least 2 characters long.");
+  }
+
 
   if (!formErrors.length) { //jeżeli nie ma błędów wysyłamy formularz
       form.submit();
@@ -64,12 +84,13 @@ form.addEventListener("submit", e => {
       //równocześnie reagując na odpowiedź z serwera
   } else {
       //jeżeli jednak są jakieś błędy...
-      formMessage.innerHTML = `
-          <h3 class="form-error-title">Przed wysłaniem formularza proszę poprawić błędy:</h3>
+      formErrorBox.innerHTML = `
+          <h3 class="form-error-title">Please correct the following errors before submitting the form:</h3>
           <ul class="form-error-list">
-              ${formErrors.map(el => `<li>${el}</li>`).join("")}
+              ${formErrors.map(el => "<li>" + el + "</li>").join("")}
           </ul>
       `;
+      formErrorBox.classList.remove('hidden');
   }
 });
 
@@ -170,16 +191,17 @@ form.addEventListener("submit", e => {
             }
         } else {
             if (res.status === "ok") {
-                const div = document.createElement("div");
+/*                 const div = document.createElement("div");
                 div.classList.add("form-send-success");
-                div.innerText = "Wysłanie wiadomości się nie powiodło";
-
                 form.parentElement.insertBefore(div, form);
                 div.innerHTML = `
                     <strong>Wiadomość została wysłana</strong>
                     <span>Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej</span>
                 `;
-                form.remove();
+                form.remove(); */
+                formInfoText.textContent = 'Your message has been sent. Thank you!'
+                formInfoBox.classList.remove('hidden');
+                formErrorBox.classList.add('hidden');
             }
             if (res.status === "error") {
                 //jeżeli istnieje komunikat o błędzie wysyłki

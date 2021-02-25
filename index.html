@@ -512,10 +512,10 @@
         <div class="form__cta">You me write yes my friend.</div>
         <div class="form__image-box"></div>
         <!-- form -->
-        <div class="form__form" id="contactForm" method="post" action="https://test-portfolio.k-son.eu/send-script.php">
+        <form class="form__form" id="contactForm" method="post" action="http://test-portfolio.k-son.eu/send-script.php">
           <div class="form__row">
             <label class="form__label" for="name">Name <span class="form__label-note">(required)</span></label>
-            <input class="form__input" id="name" name="name" type="text" required data-error-text="This field is required.">
+            <input class="form__input" id="name" name="name" type="text" required pattern=".{2,}" title="2 characters minimum">
           </div>
           <div class="form__row">
             <label class="form__label" for="email">E-mail <span class="form__label-note">(required)</span></label>
@@ -535,17 +535,22 @@
           </div>
           <div class="form__row">
             <label class="form__label" for="message">Message <span class="form__label-note">(required)</span></label>
-            <textarea class="form__textarea" id="message" name="message" rows="5" required data-error-text="This field is required."></textarea>
+            <textarea class="form__textarea" id="message" name="message" rows="5" required pattern=".{2,}" title="2 characters minimum"></textarea>
           </div>
           <div class="form__row">
-            <div class="form__info-box">
-              <p class="form__info-text">Your message was sent. Thank you!</p>
+            <div class="form__error-box hidden">
+              
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__info-box hidden">
+              <p class="form__info-text"></p>
             </div>
           </div>
           <div class="form__row">
             <button class="form__submit" type="submit">Submit</button>
           </div>
-        </div>
+        </form>
       </div>
       <div class="contact__container">
         <p class="contact__para">Jacek Jarczok</p>

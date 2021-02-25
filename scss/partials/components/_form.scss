@@ -96,14 +96,24 @@
     }
   }
 
+  &__error-box,
   &__info-box {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 4rem;
     padding: .8rem 1.2rem;
     background: var(--color-secondary);
     border-radius: 5px;
-    //transform: translateX(80rem);
+    transition: all .4s;
+
+    &.hidden {
+      display: none;
+    }
   }
 
+  &__error-text,
   &__info-text {
     font-size: 1.6rem;
     line-height: 1.4;
@@ -151,6 +161,7 @@
   display: none;
 }
 
+
 /* Form Validation */
 .form__input.field-error,
 .form__textarea.field-error {
@@ -170,7 +181,7 @@
 }
 
 
-.form-send-success,
+/* .form-send-success,
 .form-send-error {
   font-family: sans-serif;
   padding: 3em;
@@ -189,67 +200,79 @@
 .form-send-error span {
 
 }
+ */
 
+ /* error */
+
+.form-error-title,
+.form-error-list {
+  font-size: 1.6rem;
+  color: #fff;
+}
 
 .form-error-title {
-  color: brown
+  font-weight: 500;
+  margin-bottom: .8rem;
 }
 
 .form-error-list {
-  color: brown
+  width: 100%;
+  list-style-type: decimal;
+  font-weight: 400;
+  padding-left: 1.6rem;
 }
 
 
 /* success */
 .form-send-success {
   font-family: sans-serif;
-  text-align:center;
-  font-size:2rem;
-  font-weight:bold;
-  border:1px solid #eee;
-  color:#333;
-  padding:10rem 0;
-  margin:3rem auto;
-  max-width:40rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 1px solid #eee;
+  color: #333;
+  padding: 10rem 0;
+  margin: 3rem auto;
+  max-width: 40rem;
 }
 
 .form-send-success strong {
-  display:block;
-  margin-bottom:0.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .form-send-success span {
-  font-size:1rem;
-  color:#888;
-  font-weight:normal;
+  font-size: 1rem;
+  color: #888;
+  font-weight: normal;
   display: block;
 }
 
 /* error */
 .form .send-error {
-  display:inline-block;
+  display: inline-block;
   font-family: sans-serif;
-  padding:1rem 2rem;
-  color:red;
+  padding: 1rem 2rem;
+  color: red;
 }
 
 /* submit button animation */
 .loading {
   position: relative;
   pointer-events: none;
-  opacity:0.5;
+  opacity: 0.4;
 }
 
 .loading::after {
-  content:"";
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-right-color: rgba(0,0,0,0.7);
+  border: 4px solid rgba(239, 117, 100, 0.3);
+  border-right-color: rgba(239, 117, 100, 0.9);
   transform: translate(-50%, -50%) rotate(0deg);
   animation: rotateSingleLoading 0.3s infinite linear;
   z-index: 10;
