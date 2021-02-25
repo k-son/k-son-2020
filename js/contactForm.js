@@ -191,23 +191,15 @@ form.addEventListener("submit", e => {
             }
         } else {
             if (res.status === "ok") {
-/*                 const div = document.createElement("div");
-                div.classList.add("form-send-success");
-                form.parentElement.insertBefore(div, form);
-                div.innerHTML = `
-                    <strong>Wiadomość została wysłana</strong>
-                    <span>Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej</span>
-                `;
-                form.remove(); */
                 formInfoText.textContent = 'Your message has been sent. Thank you!'
                 formInfoBox.classList.remove('hidden');
-                formErrorBox.classList.add('hidden');
+                formErrorBox.classList.add('hidden'); 
             }
             if (res.status === "error") {
                 //jeżeli istnieje komunikat o błędzie wysyłki
                 //np. generowany przy poprzednim wysyłaniu formularza
                 //usuwamy go, by nie duplikować tych komunikatów
-                const statusError = document.querySelector(".form-send-error");
+/*                 const statusError = document.querySelector(".form-send-error");
                 if (statusError) {
                     statusError.remove();
                 }
@@ -215,7 +207,10 @@ form.addEventListener("submit", e => {
                 const div = document.createElement("div");
                 div.classList.add("form-send-error");
                 div.innerText = "Wysłanie wiadomości się nie powiodło";
-                submit.parentElement.appendChild(div);
+                submit.parentElement.appendChild(div); */
+                formInfoText.textContent = 'Sorry, sending the message has failed. Try again later or mail to kson.eu@gmail.com.'
+                formInfoBox.classList.remove('hidden');
+                formErrorBox.classList.add('hidden'); 
             }
         }
     }).finally(() => {
