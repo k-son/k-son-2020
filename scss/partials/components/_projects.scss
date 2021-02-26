@@ -197,19 +197,24 @@
     margin-bottom: var(--margin-common);
 
     &__link {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 10rem;
-      height: 4rem;
+      height: 4.2rem;
       font-family: 'Fjalla One', sans-serif;
-      font-size: 2rem;
-      line-height: 4rem;
+      font-size: 1.8rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      text-align: center;
+      color: var(--color-text-projects);
       border: 2px solid var(--color-text-projects);
       border-radius: 5px;
       cursor: pointer;
       transition: all .2s;
+
+      @media only screen and (min-width: 750px) {
+        font-size: 2rem;
+      }
 
       &:not(:last-of-type) {
         margin-right: var(--margin-common);
