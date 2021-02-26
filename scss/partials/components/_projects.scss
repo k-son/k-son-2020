@@ -33,12 +33,13 @@
 
   &__description {
     font-size: 1.8rem;
-    text-align: center;
+    text-align: left;
     width: 85%;
     margin: 0 auto;
 
     @media only screen and (min-width: 600px) {
       width: 80%;
+      text-align: center;
     }
   }
 
@@ -302,7 +303,6 @@
 
 
 //// class used in script.js to animate projects' containers
-
 .opacity-1 {
   opacity: 1;
   transform: translateX(0);
