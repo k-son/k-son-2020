@@ -80,8 +80,8 @@ form.addEventListener("submit", e => {
         ${formErrors.map(el => "<li>" + el + "</li>").join("")}
       </ul>
     `;
-    formErrorBox.classList.remove('hidden');
-    formInfoBox.classList.add('hidden');
+    formErrorBox.classList.remove("hidden");
+    formInfoBox.classList.add("hidden");
   }
 });
 
@@ -116,7 +116,7 @@ function toggleErrorField(field, show) {
   if (errorText !== null) {
     if (errorText.classList.contains("form-error-text")) {
       errorText.style.display = show ? "block" : "none";
-      errorText.setAttribute('aria-hidden', show);
+      errorText.setAttribute("aria-hidden", show);
     }
   }
 };
@@ -182,14 +182,14 @@ form.addEventListener("submit", e => {
         }
         } else {
           if (res.status === "ok") {
-            formInfoText.textContent = 'Your message has been sent. Thank you!'
-            formInfoBox.classList.remove('hidden');
-            formErrorBox.classList.add('hidden'); 
+            formInfoText.textContent = "Your message has been sent. Thank you!"
+            formInfoBox.classList.remove("hidden");
+            formErrorBox.classList.add("hidden"); 
           }
           if (res.status === "error") {
-            formErrorText.textContent = 'Sorry, sending the message has failed. Try again later or mail to kson.eu@gmail.com.'
-            formErrorBox.classList.remove('hidden');
-            formInfoBox.classList.add('hidden'); 
+            formErrorText.textContent = "Sorry, sending the message has failed. Try again later or mail to kson.eu@gmail.com."
+            formErrorBox.classList.remove("hidden");
+            formInfoBox.classList.add("hidden"); 
           }
         }
     }).finally(() => {

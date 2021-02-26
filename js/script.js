@@ -26,6 +26,9 @@
   
   const projectContainers = document.querySelectorAll('.project__container');
   
+  const mailAddressBtn = document.querySelector('.form__copy-address-btn');
+  const copyEmailAlert = document.querySelector('.form__copy-alert');
+
   
   //// Helper functions
   function isElementInViewport(el) {
@@ -204,4 +207,25 @@
   })
   
   window.addEventListener('scroll', showProjects);
+
+
+  //// Click to copy e-mail address in contact section
+  function copyAddress() {
+    const el = document.createElement('textarea');
+    el.value = 'kson.eu@gmail.com';
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+
+    copyEmailAlert.classList.remove('hidden');
+    setTimeout(() => {
+      copyEmailAlert.classList.add('hidden');
+    }, 3000);
+  }
+
+  mailAddressBtn.addEventListener('click', copyAddress);
 })();
