@@ -60,9 +60,9 @@ form.addEventListener("submit", e => {
     formErrors.push("Please fill in the e-mail field correctly.");
   }
 
-  if (!testText(formMessage, 2)) {
+  if (!testText(formMessage, 1)) {
     markFieldAsError(inputName, true);
-    formErrors.push("Your message must be at least 2 characters long.");
+    formErrors.push("Your must include a message.");
   }
 
 
