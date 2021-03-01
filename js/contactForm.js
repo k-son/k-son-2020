@@ -19,10 +19,10 @@ function markFieldAsError(field, show) {
 // pobieramy elementy
 //------------------------
 const form = document.querySelector("#contactForm");
-const formInput = form.querySelectorAll('input');
+const formInput = form.querySelectorAll("input");
 const inputName = form.querySelector("input[name=name]");
 const inputEmail = form.querySelector("input[name=email]");
-const formMessage = form.querySelector("textarea");
+const formMessage = document.querySelector(".form__textarea");
 const formInfoBox = document.querySelector(".form__info-box")
 const formInfoText = document.querySelector(".form__info-text");
 const formErrorBox = document.querySelector(".form__error-box");
