@@ -83,7 +83,7 @@ form.addEventListener("submit", e => {
     })
     .then(res => res.json())
     .then(res => {
-      // tu jeszcze errory z serwera dopisac
+      // tu jeszcze errory z serwera dopisac  if(res.errors) / else
       {
         if (res.status === "ok") {
           formInfoText.textContent = "Your message has been sent. Thank you!"
@@ -96,7 +96,14 @@ form.addEventListener("submit", e => {
           formInfoBox.classList.add("hidden"); 
         }
       }
-    }).finally(() => {
+    })
+    .catch(error => {
+      console.log("Error: ", error);
+      formErrorText.textContent = "Sorry, sending the message has failed. Try again later or mail to kson.eu@gmail.com."
+      formErrorBox.classList.remove("hidden");
+      formInfoBox.classList.add("hidden"); 
+    })
+    .finally(() => {
       submitBtn.disabled = false;
       submitBtn.classList.remove("loading");
     });
