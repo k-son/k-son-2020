@@ -169,8 +169,13 @@
   &__error-text,
   &__info-text {
     font-size: 1.6rem;
-    line-height: 1.4;
     color: #fff;
+  }
+
+  &__error-status {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-top: .8rem;
   }
 
   &__submit {
