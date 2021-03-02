@@ -8,16 +8,7 @@ const formInfoBox = document.querySelector(".form__info-box")
 const formInfoText = document.querySelector(".form__info-text");
 const formErrorBox = document.querySelector(".form__error-box");
 
-
-function testText(field, lng) {
-  return field.value.length >= lng;
-}
-  
-function testEmail(field) {
-  const reg = /[^@\s]+@[^@\s]+\.[^@\s]+/;
-  return reg.test(field.value);
-};
-  
+// reusable function  
 function markFieldAsError(field, show) {
   if (show) {
     field.classList.add("field-error");
@@ -26,7 +17,6 @@ function markFieldAsError(field, show) {
   }
 };
 
-
 // wyłączamy walidacje html
 form.setAttribute("novalidate", true);
 
@@ -34,7 +24,6 @@ form.setAttribute("novalidate", true);
 for (const el of inputsRequired) {
   el.addEventListener("input", e => markFieldAsError(e.target, !e.target.checkValidity()));
 }
-
 
 /* Submit */
 form.addEventListener("submit", e => {
