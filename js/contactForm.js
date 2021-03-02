@@ -7,7 +7,6 @@ const inputsRequired = form.querySelectorAll("[required]");
 const formInfoBox = document.querySelector(".form__info-box")
 const formInfoText = document.querySelector(".form__info-text");
 const formErrorBox = document.querySelector(".form__error-box");
-const formErrorText = document.querySelector(".form__error-text");
 
 
 function testText(field, lng) {
@@ -46,7 +45,7 @@ form.addEventListener("submit", e => {
     markFieldAsError(el, false);
   }
 
-  // zaznaczamy inputy jeśli nie są wypełnione poprawnie i zbieramy wiadomości do wyświetlenia
+  // zaznaczamy inputy jeśli nie są wypełnione poprawnie oraz zbieramy wiadomości do wyświetlenia
   let formErrors = [];
 
   if (!inputName.checkValidity()) {
@@ -64,9 +63,19 @@ form.addEventListener("submit", e => {
     formErrors.push("Your must include a message.");
   }
 
-  // jeżeli nie ma błędów walidacji
-  if (!formErrors.length) {
-
+  // jeżeli są błędy walidacji
+  if (formErrors.length) {
+    formErrorBox.innerHTML = `
+      <h3 class="form-error-title">Please correct the following errors before submitting the form:</h3>
+      <ul class="form-error-list">
+        ${formErrors.map(el => "<li>" + el + "</li>").join("")}
+      </ul>
+    `;
+    formErrorBox.classList.remove("hidden");
+    formInfoBox.classList.add("hidden");
+    
+    // jeżeli nie ma błędów walidacji
+  } else {
     // wyłączamy na chwilę submit button
     submitBtn.disabled = true;
     submitBtn.classList.add("loading");
@@ -81,25 +90,26 @@ form.addEventListener("submit", e => {
       method: method.toUpperCase(),
       body: formData
     })
-    .then(res => res.json())
     .then(res => {
-      // tu jeszcze errory z serwera dopisac  if(res.errors) / else
-      {
-        if (res.status === "ok") {
-          formInfoText.textContent = "Your message has been sent. Thank you!"
-          formInfoBox.classList.remove("hidden");
-          formErrorBox.classList.add("hidden"); 
-        }
-        if (res.status === "error") {
-          formErrorText.textContent = "Sorry, sending the message has failed. Try again later or mail to kson.eu@gmail.com."
-          formErrorBox.classList.remove("hidden");
-          formInfoBox.classList.add("hidden"); 
-        }
+      if (res.status === "ok") {
+        return res.json();
       }
+      if (!res.status === "ok") {
+        throw new Error();
+      }
+    })
+    .then(res => {
+      formInfoText.textContent = "Your message has been sent. Thank you!"
+      formInfoBox.classList.remove("hidden");
+      formErrorBox.classList.add("hidden"); 
     })
     .catch(error => {
       console.log("Error: ", error);
-      formErrorText.textContent = "Sorry, sending the message has failed. Try again later or mail to kson.eu@gmail.com."
+      formErrorBox.innerHTML = `
+        <p class="form__error-text">Sorry, sending the message has failed.</p>
+        <p class="form__error-text">Try again later or mail to kson.eu@gmail.com.</p>
+        <p class="form__error-status"><samp>${error}</samp></p>
+      `
       formErrorBox.classList.remove("hidden");
       formInfoBox.classList.add("hidden"); 
     })
@@ -107,15 +117,7 @@ form.addEventListener("submit", e => {
       submitBtn.disabled = false;
       submitBtn.classList.remove("loading");
     });
-
-  } else {
-    formErrorBox.innerHTML = `
-    <h3 class="form-error-title">Please correct the following errors before submitting the form:</h3>
-    <ul class="form-error-list">
-      ${formErrors.map(el => "<li>" + el + "</li>").join("")}
-    </ul>
-    `;
-    formErrorBox.classList.remove("hidden");
-    formInfoBox.classList.add("hidden");
   }
 });
+
+
