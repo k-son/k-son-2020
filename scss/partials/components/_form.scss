@@ -166,13 +166,31 @@
     background: var(--color-main);
   }
 
-  &__error-text,
+  &__error-title,  // injected by contactForm script
+  &__error-list {  // injected by contactForm script
+    font-size: 1.6rem;
+    color: #fff;
+  }
+
+  &__error-title {
+    font-weight: 500;
+    margin-bottom: .8rem;
+  }
+
+  &__error-list {
+    width: 100%;
+    list-style-type: decimal;
+    font-weight: 400;
+    padding-left: 1.6rem;
+  }
+
+  &__error-text, // injected by contactForm script
   &__info-text {
     font-size: 1.6rem;
     color: #fff;
   }
 
-  &__error-status {
+  &__error-status { // injected by contactForm script
     font-size: 1.4rem;
     color: #fff;
     margin-top: .8rem;
@@ -251,7 +269,6 @@
   display: none;
 }
 
-
 /* if input not valid */
 .form__input.field-error,
 .form__textarea.field-error {
@@ -260,21 +277,3 @@
   box-shadow: 0 0 0 2px rgba(255,99,71, 0.3);
 }
 
-/* js validation error messages */
-.form-error-title,  // injected by contactForm script
-.form-error-list {  // injected by contactForm script
-  font-size: 1.6rem;
-  color: #fff;
-}
-
-.form-error-title {
-  font-weight: 500;
-  margin-bottom: .8rem;
-}
-
-.form-error-list {
-  width: 100%;
-  list-style-type: decimal;
-  font-weight: 400;
-  padding-left: 1.6rem;
-}

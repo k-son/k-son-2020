@@ -55,8 +55,8 @@ form.addEventListener("submit", e => {
   // jeżeli są błędy walidacji
   if (formErrors.length) {
     formErrorBox.innerHTML = `
-      <h3 class="form-error-title">Please correct the following errors before submitting the form:</h3>
-      <ul class="form-error-list">
+      <h3 class="form__error-title">Please correct the following errors before submitting the form:</h3>
+      <ul class="form__error-list">
         ${formErrors.map(el => "<li>" + el + "</li>").join("")}
       </ul>
     `;
@@ -90,7 +90,7 @@ form.addEventListener("submit", e => {
     .then(res => {
       formInfoText.textContent = "Your message has been sent. Thank you!"
       formInfoBox.classList.remove("hidden");
-      formErrorBox.classList.add("hidden"); 
+      formErrorBox.classList.add("hidden");
     })
     .catch(error => {
       console.log("Error: ", error);
