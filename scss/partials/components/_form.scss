@@ -31,12 +31,21 @@
     position: relative;
     padding: .2rem;
     cursor: pointer;
+
+    &:hover .form__copy-icon {
+      fill: var(--color-text);
+    }
+
+    &:active .form__copy-icon {
+      fill: var(--color-secondary);
+    }
   }
 
   &__copy-icon {
     height: 2rem;
     width: auto;
     fill: #999;
+    transition: all .2s;
   }
 
   &__copy-alert {
