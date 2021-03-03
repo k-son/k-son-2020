@@ -213,7 +213,7 @@
   function copyAddress() {
     const el = document.createElement('textarea');
     el.value = 'kson.eu@gmail.com';
-    el.setAttribute('readonly', '');
+    el.setAttribute('readonly', true);
     el.style.position = 'absolute';
     el.style.left = '-9999px';
     document.body.appendChild(el);
