@@ -6,7 +6,7 @@
   const inputName = form.querySelector("input[name=name]");
   const inputEmail = form.querySelector("input[name=email]");
   const inputMessage = form.querySelector("textarea");
-  const inputsRequired = form.querySelectorAll("[required]");
+  const inputsRequired = [inputName, inputEmail, inputMessage];
   const formInfoBox = document.querySelector(".form__info-box")
   const formInfoText = document.querySelector(".form__info-text");
   const formErrorBox = document.querySelector(".form__error-box");
