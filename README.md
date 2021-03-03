@@ -1,3 +1,3 @@
 # My portfolio website
 
-Showcase of my commercial and private projects.
+[Check it out!](https://k-son.eu/)
