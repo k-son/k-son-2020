@@ -115,6 +115,10 @@
     &:not(:last-of-type) {
       margin-bottom: 2rem;
     }
+
+    &:focus-within > .form__label {
+      color: var(--color-main);
+    }
   }
 
   &__label {
@@ -123,6 +127,7 @@
     font-weight: 500;
     margin-bottom: .4rem;
     cursor: default !important;
+    transition: color .2s;
   }
 
   &__label-note {
