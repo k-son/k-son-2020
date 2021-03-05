@@ -14,7 +14,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  //@include padding-block;
   margin-bottom: var(--margin-common--large);
 
   @media only screen and (min-width: 750px) {
@@ -279,9 +278,10 @@
 .github {
   @include padding-block;
   margin-bottom: var(--margin-common--large);
+  text-align: center;
 
   & a {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -324,9 +324,10 @@
 .codewars {
   @include padding-block;
   margin-bottom: var(--margin-common--large);
+  text-align: center;
 
   & a {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
