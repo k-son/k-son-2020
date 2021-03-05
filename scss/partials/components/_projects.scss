@@ -14,7 +14,7 @@
     opacity: 0;
     overflow: hidden;
     transform: translateX(-120vw);
-    transition: transform .8s, opacity 2s;
+    transition: transform .7s, opacity 1.5s;
 
     &:nth-of-type(2n) {
       background-color: var(--color-main);

@@ -198,7 +198,7 @@
   
   
   //// Slide in projects
-  const showProjects = debounced(200, function() {
+  const showProjects = debounced(150, function() {
     projectContainers.forEach(el => {
       if (isElementInViewport(el)) {
         el.classList.add('opacity-1');
