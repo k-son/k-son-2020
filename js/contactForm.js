@@ -52,7 +52,7 @@
   
     if (!inputMessage.checkValidity()) {
       markFieldAsError(inputMessage, true);
-      formErrors.push("Your must include a message.");
+      formErrors.push("You must include a message.");
     }
   
     // jeżeli są błędy walidacji
