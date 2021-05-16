@@ -429,7 +429,9 @@
       color: var(--color-secondary);
     }
 
-    &--ps, 
+    &--figma,
+    &--ps,
+    &--ai,
     &--bootstrap,
     &--react,
     &--jquery,
@@ -441,8 +443,14 @@
       }
     }
 
+    &--figma {
+      height: 6rem;
+      margin-right: 2px;
+    }
+
     &--react {
-      height: 7.2rem;
+      height: 6rem;
+      margin-right: -10px;
     }
 
     &--bootstrap {
@@ -460,6 +468,10 @@
 
     &--ps {
       margin-left: .8rem;
+    }
+
+    &--ai {
+      height: 4.6rem;
     }
   }
 

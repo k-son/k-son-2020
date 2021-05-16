@@ -119,7 +119,7 @@
   
   
   //// CV
-  cvBtnCv.addEventListener('click', () => {
+/*   cvBtnCv.addEventListener('click', () => {
     cvBtnCvSpan.style.width = "100%";
     cvBtnCv.classList.add('opacity0');
     window.setTimeout(function() {
@@ -135,7 +135,7 @@
     const y = e.clientY - shape.top + "px";
     cvBtnCvSpan.style.left = x;
     cvBtnCvSpan.style.top = y;
-  })
+  }) */
   
   
   //// Tech skills buttons

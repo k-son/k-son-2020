@@ -69,7 +69,7 @@
     HEADER
   -->
   <header class="header">
-    <!--<h2 class="header__h2">web design</h2>-->
+    <h2 class="header__h2">web design</h2>
     <div class="header__caption">
       <p class="header__caption__shadow">k-son</p>
       <h1 class="header__caption__h1">k-son</h1>
@@ -141,7 +141,7 @@
       </div>
 
       <!-- CV -->
-      <div class="cv">
+<!--       <div class="cv">
         <div class="cv__buttonsLang-box">
           <div class="cv__buttonLang-wrapper">
             <a href="cv/CV_Jarczok_2020_en.pdf" class="cv__btn--lang" download>cv english version</a>
@@ -151,7 +151,7 @@
           </div>
         </div>
         <button class="cv__btn--cv" type="button" role="button">download my cv<span></span></button>
-      </div>
+      </div> -->
 
       <!-- GITHUB ACTIVITY -->
       <div class="github">
@@ -175,8 +175,15 @@
         <div class="skills__box">
           <!-- MAIN SKILLS -->
           <div class="skills__box--primary">
+            <!-- figma -->
+            <button class="skills__btn skills__btn--figma" data-skill="figma" aria-labelledby="skills__description--figma" type="button" role="button">
+              <span class="skills__btn__mark"></span>
+              <svg class="skills__icon skills__icon--primary skills__icon--figma" role="img" alt="Figma icon" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 300c27.6 0 50-22.4 50-50v-50H50c-27.6 0-50 22.4-50 50s22.4 50 50 50z"/><path d="M0 150c0-27.6 22.4-50 50-50h50v100H50c-27.6 0-50-22.4-50-50z"/><path d="M0 50C0 22.4 22.4 0 50 0h50v100H50C22.4 100 0 77.6 0 50z"/><path d="M100 0h50c27.6 0 50 22.4 50 50s-22.4 50-50 50h-50z"/><path d="M200 150c0 27.6-22.4 50-50 50s-50-22.4-50-50 22.4-50 50-50 50 22.4 50 50z"/>
+              </svg>
+            </button>
             <!-- html -->
-            <button class="skills__btn skills__btn--html " data-skill="html" aria-labelledby="skills__description--html" type="button" role="button">
+            <button class="skills__btn skills__btn--html" data-skill="html" aria-labelledby="skills__description--html" type="button" role="button">
               <span class="skills__btn__mark"></span>
               <svg class="skills__icon skills__icon--primary skills__icon--html" role="img" alt="HTML icon" viewBox="0 0 384 512"><path fill="currentColor" d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"></path></svg>
             </button>
@@ -195,19 +202,14 @@
               <span class="skills__btn__mark"></span>
               <svg class="skills__icon skills__icon--primary skills__icon--js" role="img" alt="JavaScript icon" viewBox="0 0 448 512"><path fill="currentColor" d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"></path></svg>
             </button>
+          </div>
+          <!-- SECONDARY SKILLS -->
+          <div class="skills__box--secondary">
             <!-- react -->
             <button class="skills__btn skills__btn--react" data-skill="react" aria-labelledby="skills__description--react" type="button" role="button">
               <span class="skills__btn__mark"></span>
               <svg class="skills__icon skills__icon--primary skills__icon--react" role="img" alt="React.js icon" viewBox="0 0 24 24"><path d="M11.103,10.43793a1.78593,1.78593,0,1,0,2.43957.65362A1.786,1.786,0,0,0,11.103,10.43793Zm8.0047,1.93768q-.17587-.201-.37116-.40308.13641-.14337.264-.28649c1.60583-1.80427,2.28357-3.61371,1.65558-4.70154-.60217-1.043-2.39343-1.35382-4.63593-.91779q-.33132.06482-.659.14624-.06272-.21624-.13343-.43C14.467,3.49042,13.2381,1.99921,11.98206,2,10.77765,2.00055,9.61359,3.39709,8.871,5.5575q-.10959.31969-.20276.64471-.21908-.05375-.44-.0993c-2.366-.48578-4.27167-.16584-4.89844.9226-.601,1.04376.02753,2.74982,1.52851,4.47211q.22329.25562.45922.49976c-.18542.191-.361.38189-.52465.57171-1.4646,1.698-2.05719,3.37616-1.45716,4.41541.61969,1.07348,2.49854,1.42437,4.7854.97436q.278-.05511.55292-.124.10071.35156.22095.697c.73932,2.11706,1.89685,3.46863,3.097,3.4682,1.23944-.00073,2.48194-1.45288,3.23474-3.65875.05945-.17432.11573-.35535.16907-.54175q.35514.08835.71485.1568c2.20336.41687,3.95251.089,4.55145-.951C21.28058,15.93109,20.64288,14.12933,19.10767,12.37561ZM4.07019,7.45184c.38586-.67,1.94324-.93139,3.98608-.512q.19584.04027.39838.09a20.464,20.464,0,0,0-.42126,2.67767,20.88659,20.88659,0,0,0-2.10389,1.6936q-.21945-.22695-.42718-.4649l.00006.00006C4.21631,9.46057,3.708,8.08081,4.07019,7.45184Zm3.88666,5.72809c-.51056-.3866-.98505-.78265-1.41571-1.181.43036-.39587.90515-.79059,1.41467-1.17615q-.02746.58915-.02722,1.1792Q7.929,12.59117,7.95685,13.17993Zm-.00061,3.94061a7.23675,7.23675,0,0,1-2.63971.09314,1.766,1.766,0,0,1-1.241-.65631c-.36407-.63067.11176-1.978,1.36432-3.43023q.23621-.273.48791-.53174a20.49026,20.49026,0,0,0,2.10712,1.70007,20.80226,20.80226,0,0,0,.42621,2.712Q8.21011,17.07023,7.95624,17.12054Zm7.10113-8.03936q-.50309-.317-1.01861-.61365-.5073-.292-1.0268-.56207c.593-.24933,1.17591-.46228,1.73865-.63581A18.21775,18.21775,0,0,1,15.05737,9.08118ZM9.679,5.83521c.63623-1.85114,1.57763-2.98053,2.30352-2.98084.77308-.00037,1.77753,1.21826,2.43433,3.19763q.064.19355.121.38928a20.478,20.478,0,0,0-2.52716.9712,20.06145,20.06145,0,0,0-2.519-.98194Q9.578,6.13062,9.679,5.83521ZM9.27863,7.259a18.30717,18.30717,0,0,1,1.72967.642Q9.95746,8.4433,8.96094,9.0824C9.0412,8.4444,9.148,7.83313,9.27863,7.259ZM8.9624,14.91968q.49695.31813,1.00843.61273.52174.30039,1.05737.57556a18.19577,18.19577,0,0,1-1.74445.66492C9.15161,16.1908,9.04364,15.56879,8.9624,14.91968Zm5.45569,3.14551A7.23556,7.23556,0,0,1,13.18,20.39844l-.00006.00006a1.76585,1.76585,0,0,1-1.18841.747c-.72821.00042-1.65766-1.085-2.28992-2.89545q-.11169-.32108-.20551-.648a20.10863,20.10863,0,0,0,2.52918-1.0097,20.79976,20.79976,0,0,0,2.54736.97851Q14.50141,17.81983,14.41809,18.06519Zm.36224-1.32422c-.56921-.176-1.16058-.39252-1.76214-.64551q.50867-.2677,1.02472-.56543.52955-.30579,1.0321-.62689A18.1524,18.1524,0,0,1,14.78033,16.741Zm.44629-4.74268q.00111.91095-.05688,1.82044c-.49268.33343-1.01282.659-1.554.97143-.53894.31116-1.07293.59711-1.59674.8559q-.82682-.39624-1.62176-.854-.79047-.455-1.54468-.969-.06894-.90921-.06946-1.82172l.00012.00019q-.00063-.91187.06794-1.82184c.49255-.33637,1.00891-.66168,1.54278-.96991.53632-.30969,1.077-.59442,1.61469-.85248q.81664.39688,1.60382.85065.78992.454,1.549.95868.06519.91443.06524,1.83166Zm.95673-5.09283c1.92133-.37372,3.37-.12232,3.73291.50622.3866.66962-.16748,2.1485-1.55383,3.70636l-.00006.00006q-.1149.12891-.23841.25891A20.06118,20.06118,0,0,0,15.98,9.68915a20.04054,20.04054,0,0,0-.40546-2.64893Q15.88486,6.96387,16.18335,6.90546Zm-.12988,3.8847A18.16447,18.16447,0,0,1,17.51483,11.978a18.11912,18.11912,0,0,1-1.45672,1.20831q.02325-.59391.02288-1.18842Q16.08072,11.39389,16.05347,10.79016Zm3.8681,5.78876c-.36346.63116-1.76788.89435-3.65222.53784q-.32391-.06115-.66474-.14557a20.069,20.069,0,0,0,.38746-2.68176,19.93914,19.93914,0,0,0,2.13708-1.71588q.17643.18329.33563.36487v-.00007a7.23437,7.23437,0,0,1,1.40308,2.23792A1.76563,1.76563,0,0,1,19.92157,16.57892Z"/></svg>
             </button>
-            <!-- github -->
-            <button class="skills__btn skills__btn--github" data-skill="github" aria-labelledby="skills__description--github" type="button" role="button">
-              <span class="skills__btn__mark"></span>
-              <svg class="skills__icon skills__icon--primary skills__icon--github" role="img" alt="Github icon" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
-            </button>
-          </div>
-          <!-- SECONDARY SKILLS -->
-          <div class="skills__box--secondary">
             <!-- jquery 
             <button class="skills__btn skills__btn--jquery" data-skill="jquery" aria-labelledby="skills__description--jquery" type="button" role="button">
               <span class="skills__btn__mark"></span>
@@ -215,7 +217,7 @@
             </button>
             -->
             <!-- wordpress -->
-            <button class="skills__btn skills__btn--wordpress" data-skill="wordpress" aria-labelledby="skills__description--wordpress" type="button" role="button">
+<!--             <button class="skills__btn skills__btn--wordpress" data-skill="wordpress" aria-labelledby="skills__description--wordpress" type="button" role="button">
               <span class="skills__btn__mark"></span>
               <svg class="skills__icon skills__icon--wordpress" role="img" alt="WordPress icon" viewBox="0 0 512 512">
               <g></g>
@@ -225,41 +227,60 @@
               <path d="M167.383 188.16l-8.478-0.379c-18.494-0.307-16.446 18.893-16.446 18.893l65.618 164.577 44.114-105.37-24.627-62.7c-9.861-16.578-33.925-16.404-33.925-16.404v-8.734h137.974l-0.205 9.687-14.356 0.891c-17.879 0-14.264 17.008-14.264 17.008l59.873 159.939 17.162-44.288c30.443-69.017 11.663-120.094 11.663-120.094-30.485-62.72 8.038-71.721 8.038-71.721 2.437-0.348 4.721-0.542 6.963-0.645-36.199-42.537-90.122-69.519-150.323-69.519-81.398 0-151.316 49.326-181.474 119.706l92.365-0.952 0.327 10.107z"/>
               <path d="M477.839 256.021c0 122.306-99.522 221.839-221.798 221.839-122.338 0-221.86-99.533-221.86-221.839 0-122.338 99.522-221.829 221.86-221.829 122.276 0.010 221.798 99.492 221.798 221.829zM256.041 23.972c-127.939 0-232.048 104.11-232.048 232.059s104.11 232.007 232.048 232.007c127.918 0 231.957-104.059 231.957-232.007 0-127.949-104.038-232.059-231.957-232.059z"/>
               </svg>
-            </button>
+            </button> -->
             <!-- bootstrap -->
             <button class="skills__btn skills__btn--bootstrap" data-skill="bootstrap" aria-labelledby="skills__description--bootstrap" type="button" role="button">
               <span class="skills__btn__mark"></span>
               <svg class="skills__icon skills__icon--bootstrap" role="img" alt="Bootstrap icon" viewBox="0 0 48 48"><path d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5 V37z"/><path fill="#fff" d="M33.03,25.6c-0.65-0.9-1.59-1.52-2.8-1.85c0,0,1.02-0.37,1.94-1.75c0.55-0.88,0.83-1.94,0.83-3.18 c0-2.15-0.78-3.8-2.34-4.93C29.1,12.76,27.34,12,24.35,12H15v24h10.43c2.83-0.02,4.96-0.63,6.41-1.8c1.44-1.19,2.16-2.95,2.16-5.3 C34,27.6,33.68,26.5,33.03,25.6z M21,16c0,0,4.17,0,4.25,0c1.52,0,2.75,1.23,2.75,2.75c0,1.52-1.23,2.75-2.75,2.75 c-0.08,0-4.25,0-4.25,0V16z M26,32h-5v-6h5c1.66,0,3,1.34,3,3C29,30.66,27.66,32,26,32z"/></svg>
             </button>
+            <!-- github -->
+            <button class="skills__btn skills__btn--github" data-skill="github" aria-labelledby="skills__description--github" type="button" role="button">
+              <span class="skills__btn__mark"></span>
+              <svg class="skills__icon skills__icon--github" role="img" alt="Github icon" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+            </button>
             <!-- sketch -->
-            <button class="skills__btn skills__btn--sketch" data-skill="sketch" aria-labelledby="skills__description--sketch" type="button" role="button">
+<!--             <button class="skills__btn skills__btn--sketch" data-skill="sketch" aria-labelledby="skills__description--sketch" type="button" role="button">
               <span class="skills__btn__mark"></span>
               <svg class="skills__icon skills__icon--sketch" role="img" alt="Sketch icon" viewBox="0 0 512 512"><path fill="currentColor" d="M27.5 162.2L9 187.1h90.5l6.9-130.7-78.9 105.8zM396.3 45.7L267.7 32l135.7 147.2-7.1-133.5zM112.2 218.3l-11.2-22H9.9L234.8 458zm2-31.2h284l-81.5-88.5L256.3 33zm297.3 9.1L277.6 458l224.8-261.7h-90.9zM415.4 69L406 56.4l.9 17.3 6.1 113.4h90.3zM113.5 93.5l-4.6 85.6L244.7 32 116.1 45.7zm287.7 102.7h-290l42.4 82.9L256.3 480l144.9-283.8z"></path></svg>
-            </button>
+            </button> -->
             <!-- ps -->
             <button class="skills__btn skills__btn--ps" data-skill="ps" aria-labelledby="skills__description--ps" type="button" role="button">
               <span class="skills__btn__mark"></span>
               <svg class="skills__icon skills__icon--ps" role="img" alt="Photoshop icon" x="0px" y="0px"
                 viewBox="0 0 243.852 243.852" style="enable-background:new 0 0 243.852 243.852;" xml:space="preserve">
-              <g id="XMLID_309_">
-              <path id="XMLID_311_" d="M45.213,211.003v-61.364c3.273,0.319,7.133,0.485,11.346,0.485c25.676,0,46.436-6.773,60.043-19.594
-                c11.146-10.589,17.287-26.365,17.287-44.42c0-17.536-7.334-33.392-20.109-43.494c-12.559-10.045-31.014-14.929-56.42-14.929
-                c-22.008,0-40.605,1.266-55.279,3.764C0.879,31.654,0,32.696,0,33.915v177.088c0,1.381,1.119,2.5,2.5,2.5h40.213
-                C44.094,213.503,45.213,212.384,45.213,211.003z M45.213,113.339V64.405c2.455-0.471,7.066-1.094,14.275-1.094
-                c18.551,0,29.19,8.698,29.19,23.863c0,16.776-12.105,26.793-32.385,26.793C51.428,113.967,47.963,113.775,45.213,113.339z"/>
-              <path id="XMLID_334_" d="M206.76,129.02c-16.568-5.798-19.363-8.559-19.363-12.553c0-7.093,8.109-8.152,12.945-8.152
-                c10.268,0,20.979,3.852,27.031,7.15c0.678,0.369,1.484,0.405,2.193,0.098c0.705-0.308,1.232-0.924,1.424-1.67l7.191-27.959
-                c0.293-1.141-0.25-2.332-1.303-2.858c-7.465-3.732-21.332-7.721-37.869-7.721c-32.674,0-55.494,18.549-55.494,45.065
-                c-0.221,12.937,6.317,30.649,38.725,41.558c15.742,5.248,17.465,7.975,17.465,12.542c0,2.082,0,8.418-14.809,8.418
-                c-11.094,0-26.072-4.927-33.588-9.491c-0.682-0.413-1.516-0.478-2.252-0.174c-0.734,0.303-1.281,0.938-1.473,1.71l-7.189,29.028
-                c-0.274,1.107,0.236,2.258,1.238,2.8c10.998,5.944,26.768,9.354,43.264,9.354c36.365,0,58.955-17.08,58.955-44.608
-                C243.563,150.866,232.119,137.746,206.76,129.02z"/>
-              </g>
+                <g id="XMLID_309_">
+                <path id="XMLID_311_" d="M45.213,211.003v-61.364c3.273,0.319,7.133,0.485,11.346,0.485c25.676,0,46.436-6.773,60.043-19.594
+                  c11.146-10.589,17.287-26.365,17.287-44.42c0-17.536-7.334-33.392-20.109-43.494c-12.559-10.045-31.014-14.929-56.42-14.929
+                  c-22.008,0-40.605,1.266-55.279,3.764C0.879,31.654,0,32.696,0,33.915v177.088c0,1.381,1.119,2.5,2.5,2.5h40.213
+                  C44.094,213.503,45.213,212.384,45.213,211.003z M45.213,113.339V64.405c2.455-0.471,7.066-1.094,14.275-1.094
+                  c18.551,0,29.19,8.698,29.19,23.863c0,16.776-12.105,26.793-32.385,26.793C51.428,113.967,47.963,113.775,45.213,113.339z"/>
+                <path id="XMLID_334_" d="M206.76,129.02c-16.568-5.798-19.363-8.559-19.363-12.553c0-7.093,8.109-8.152,12.945-8.152
+                  c10.268,0,20.979,3.852,27.031,7.15c0.678,0.369,1.484,0.405,2.193,0.098c0.705-0.308,1.232-0.924,1.424-1.67l7.191-27.959
+                  c0.293-1.141-0.25-2.332-1.303-2.858c-7.465-3.732-21.332-7.721-37.869-7.721c-32.674,0-55.494,18.549-55.494,45.065
+                  c-0.221,12.937,6.317,30.649,38.725,41.558c15.742,5.248,17.465,7.975,17.465,12.542c0,2.082,0,8.418-14.809,8.418
+                  c-11.094,0-26.072-4.927-33.588-9.491c-0.682-0.413-1.516-0.478-2.252-0.174c-0.734,0.303-1.281,0.938-1.473,1.71l-7.189,29.028
+                  c-0.274,1.107,0.236,2.258,1.238,2.8c10.998,5.944,26.768,9.354,43.264,9.354c36.365,0,58.955-17.08,58.955-44.608
+                  C243.563,150.866,232.119,137.746,206.76,129.02z"/>
+                </g>
+              </svg>
+            </button>
+            <button class="skills__btn skills__btn--ai" data-skill="ai" aria-labelledby="skills__description--ai" type="button" role="button">
+              <span class="skills__btn__mark"></span>
+              <svg class="skills__icon skills__icon--ai" role="img" alt="Illustrator icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                <path d="M241.782,181.6h-29.28L147.462,352h34.08l15.6-42.48h59.52l15.84,42.48h34.08L241.782,181.6z M202.662,286.24l24.48-66.96
+                      l23.52,66.96H202.662z"/>
+                <rect x="322.182" y="226.24" width="32.159" height="125.76"/>
+                <rect x="322.182" y="176.8" width="32.159" height="31.92"/>  
+                <path d="M0,0v512h512V0H0z M482,482H30V30h452V482z"/>
               </svg>
             </button>
           </div>
         </div>
         <div class="skills__descriptions-box">
+          <div class="skills__description" data-skill="figma">
+            <h5 class="skills__description__h5" id="skills__description--figma">Figma</h5>
+            <p class="skills__description__para">I'm a huge fan of Figma's collaboration features.</p>
+          </div>
           <div class="skills__description" data-skill="html">
             <h5 class="skills__description__h5" id="skills__description--html">HTML5</h5>
             <p class="skills__description__para">I put effort into giving my markup most semantics possible.</p>
@@ -282,7 +303,7 @@
           </div>
           <div class="skills__description" data-skill="react">
             <h5 class="skills__description__h5" id="skills__description--react">React.js</h5>
-            <p class="skills__description__para">The latest item in my tech stack. I'm impressed by this approach to building UI.</p>
+            <p class="skills__description__para">I'm impressed by this approach to building UI.</p>
           </div>
           <div class="skills__description" data-skill="jquery">
             <h5 class="skills__description__h5" id="skills__description--jquery">jQuery</h5>
@@ -307,7 +328,11 @@
           </div>
           <div class="skills__description" data-skill="ps">
             <h5 class="skills__description__h5" id="skills__description--ps">Photoshop</h5>
-            <p class="skills__description__para">I've used it mainly for photo manipulation, retouching and album design.</p>
+            <p class="skills__description__para">I use it mainly for photo manipulation, resizing, retouching and album design.</p>
+          </div>
+          <div class="skills__description" data-skill="ai">
+            <h5 class="skills__description__h5" id="skills__description--ai">Illustrator</h5>
+            <p class="skills__description__para">My tool for vector graphic manipulation.</p>
           </div>
         </div>
       </section>
@@ -426,7 +451,7 @@
       </div>
       
       <!-- Bede go zjadł -->
-      <div class="project__container personal">
+<!--       <div class="project__container personal">
         <h4 class="project__h4">Bede go zjadł</h4>
         <p class="project__description">WordPress child theme ('Kale' parent theme). Food blog, serves us as a collection of our meal recipes.</p>
         <div class="project__mockup">
@@ -443,10 +468,10 @@
           <span class="project__tags__tag">CSS3</span>
           <span class="project__tags__tag">JavaScript</span>
         </div>
-      </div>
+      </div> -->
       
       <!-- Fotograf-slask -->
-      <div class="project__container personal">
+<!--       <div class="project__container personal">
         <h4 class="project__h4">Fotograf-Slask</h4>
         <p class="project__description">Website about my photography services. I wanted to practice Bootstrap and utilize a good domain address. I applied some search engine optimization techniques. Main, more sophisticated landing page for 'Spacer po zdjęcia' in preparation.</p>
         <div class="project__mockup">
@@ -462,7 +487,7 @@
           <span class="project__tags__tag">CSS3</span>
           <span class="project__tags__tag">jQuery</span>
         </div>
-      </div>
+      </div> -->
 
       <!-- WeInstall 
       <div class="project__container">
@@ -484,8 +509,8 @@
       </div>
       -->
 
-      <!-- Chef 
-      <div class="project__container">
+      <!-- Andrew the Chef -->
+      <!-- <div class="project__container">
         <h4 class="project__h4">Andrew the Chef</h4>
         <p class="project__description">Imaginary chef's website. Photography, design and coding.</p>
         <div class="project__mockup">
@@ -502,8 +527,8 @@
           <span class="project__tags__tag">RWD</span>
           <span class="project__tags__tag">JavaScript</span>
         </div>
-      </div>
-      -->
+      </div> -->
+
     </section>
 
         <!--
