@@ -108,6 +108,9 @@
       &--chef {
         background-image: url(../img/chef_d.jpg);
       }
+      &--aden {
+        background-image: url(../img/aden_d.jpg);
+      }
       
       @media only screen and (min-width: 450px) {
         width: calc(18vw * 1.7777777777777777);
@@ -169,6 +172,9 @@
       }
       &--chef {
         background-image: url(../img/chef_m.jpg);
+      }
+      &--aden {
+        background-image: url(../img/aden_m.jpg);
       }
 
       @media only screen and (min-width: 450px) {
