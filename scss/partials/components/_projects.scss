@@ -111,6 +111,15 @@
       &--aden {
         background-image: url(../img/aden_d.jpg);
       }
+      &--ovps {
+        background-image: url(../img/ovps_d.jpg);
+      }
+      &--poczta20 {
+        background-image: url(../img/poczta20_d.jpg);
+      }
+      &--mikolow {
+        background-image: url(../img/mikolow_d.jpg);
+      }
       
       @media only screen and (min-width: 450px) {
         width: calc(18vw * 1.7777777777777777);
@@ -175,6 +184,15 @@
       }
       &--aden {
         background-image: url(../img/aden_m.jpg);
+      }
+      &--ovps {
+        background-image: url(../img/ovps_m.png);
+      }
+      &--poczta20 {
+        background-image: url(../img/poczta20_m.jpg);
+      }
+      &--mikolow {
+        background-image: url(../img/mikolow_m.jpg);
       }
 
       @media only screen and (min-width: 450px) {
@@ -308,6 +326,38 @@
 
     @media only screen and (min-width: 600px) {
       display: block;
+    }
+  }
+}
+
+
+/* Dribble */
+.dribbble-link {
+  font-size: 1.8rem;
+  margin-left: 32px;
+  transform: translateY(-24px);
+  margin-bottom: 40px;
+
+  & a {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    transition: all .2s;
+
+    &:hover {
+      color: var(--color-main);
+    }
+
+    & span {
+      display: flex;
+      align-items: center;
+      transform: translateY(2px);
+    }
+
+    & img:first-of-type {
+      display: block;
+      height: 32px;
+      width: auto;
     }
   }
 }
