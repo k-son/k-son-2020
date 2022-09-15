@@ -1281,6 +1281,12 @@ main {
       background-image: url(../img/chef_d.jpg); }
     .project__mockup__desktop--aden {
       background-image: url(../img/aden_d.jpg); }
+    .project__mockup__desktop--ovps {
+      background-image: url(../img/ovps_d.jpg); }
+    .project__mockup__desktop--poczta20 {
+      background-image: url(../img/poczta20_d.jpg); }
+    .project__mockup__desktop--mikolow {
+      background-image: url(../img/mikolow_d.jpg); }
     @media only screen and (min-width: 450px) {
       .project__mockup__desktop {
         width: calc(18vw * 1.7777777777777777);
@@ -1326,6 +1332,12 @@ main {
       background-image: url(../img/chef_m.jpg); }
     .project__mockup__mobile--aden {
       background-image: url(../img/aden_m.jpg); }
+    .project__mockup__mobile--ovps {
+      background-image: url(../img/ovps_m.png); }
+    .project__mockup__mobile--poczta20 {
+      background-image: url(../img/poczta20_m.jpg); }
+    .project__mockup__mobile--mikolow {
+      background-image: url(../img/mikolow_m.jpg); }
     @media only screen and (min-width: 450px) {
       .project__mockup__mobile {
         width: calc(18vw * 0.75);
@@ -1425,6 +1437,28 @@ main {
   @media only screen and (min-width: 600px) {
     .commercial::before {
       display: block; } }
+
+/* Dribble */
+.dribbble-link {
+  font-size: 1.8rem;
+  margin-left: 32px;
+  transform: translateY(-24px);
+  margin-bottom: 40px; }
+  .dribbble-link a {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    transition: all .2s; }
+    .dribbble-link a:hover {
+      color: var(--color-main); }
+    .dribbble-link a span {
+      display: flex;
+      align-items: center;
+      transform: translateY(2px); }
+    .dribbble-link a img:first-of-type {
+      display: block;
+      height: 32px;
+      width: auto; }
 
 .opacity-1 {
   opacity: 1;
