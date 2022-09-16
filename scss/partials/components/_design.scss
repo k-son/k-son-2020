@@ -1,0 +1,17 @@
+.design {
+  margin-top: var(--margin-common--large);
+  position: relative;
+
+  &__container {
+    position: relative;
+    width: var(--width-content);
+    margin: 0 auto;
+  }
+}
+
+.design__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}

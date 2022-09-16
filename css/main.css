@@ -1287,6 +1287,8 @@ main {
       background-image: url(../img/poczta20_d.jpg); }
     .project__mockup__desktop--mikolow {
       background-image: url(../img/mikolow_d.jpg); }
+    .project__mockup__desktop--saule {
+      background-image: url(../img/saule_d.jpg); }
     @media only screen and (min-width: 450px) {
       .project__mockup__desktop {
         width: calc(18vw * 1.7777777777777777);
@@ -1338,6 +1340,8 @@ main {
       background-image: url(../img/poczta20_m.jpg); }
     .project__mockup__mobile--mikolow {
       background-image: url(../img/mikolow_m.jpg); }
+    .project__mockup__mobile--saule {
+      background-image: url(../img/saule_m.jpg); }
     @media only screen and (min-width: 450px) {
       .project__mockup__mobile {
         width: calc(18vw * 0.75);
@@ -1449,8 +1453,10 @@ main {
     align-items: baseline;
     gap: 12px;
     transition: all .2s; }
-    .dribbble-link a:hover {
+    .dribbble-link a:hover, .dribbble-link a:focus {
       color: var(--color-main); }
+    .dribbble-link a:focus {
+      outline: none; }
     .dribbble-link a span {
       display: flex;
       align-items: center;
@@ -1807,3 +1813,17 @@ main {
 /* Honeypot */
 .honey-row {
   display: none; }
+
+.design {
+  margin-top: var(--margin-common--large);
+  position: relative; }
+  .design__container {
+    position: relative;
+    width: var(--width-content);
+    margin: 0 auto; }
+
+.design__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px; }

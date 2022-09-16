@@ -120,6 +120,9 @@
       &--mikolow {
         background-image: url(../img/mikolow_d.jpg);
       }
+      &--saule {
+        background-image: url(../img/saule_d.jpg);
+      }
       
       @media only screen and (min-width: 450px) {
         width: calc(18vw * 1.7777777777777777);
@@ -193,6 +196,9 @@
       }
       &--mikolow {
         background-image: url(../img/mikolow_m.jpg);
+      }
+      &--saule {
+        background-image: url(../img/saule_m.jpg);
       }
 
       @media only screen and (min-width: 450px) {
@@ -344,8 +350,12 @@
     gap: 12px;
     transition: all .2s;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: var(--color-main);
+    }
+    &:focus {
+      outline: none;
     }
 
     & span {
