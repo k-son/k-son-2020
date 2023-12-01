@@ -39,7 +39,41 @@
 
     @media only screen and (min-width: 600px) {
       width: 80%;
-      text-align: center;
+      text-align: left;
+    }
+  }
+
+  &__description-overwiev {
+    margin-bottom: 1.6rem;
+  }
+
+  &__description-role {
+    font-weight: 500;
+
+  }
+
+  &__when {
+
+    & span {
+      font-size: 1.4rem;
+
+      &:first-child {
+        margin-right: .6rem;
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+
+    &__tag {
+      font-size: 1.4rem;
+
+      &:not(:last-of-type) {
+        margin-right: 1.2rem;
+      }
     }
   }
 
@@ -47,8 +81,17 @@
     display: flex;
     justify-content: center;
     margin: var(--margin-common) 0;
+
+    & a {
+      cursor: pointer;
+      transition: all .2s;
+
+      &:hover {
+        border-color: var(--color-secondary) !important;
+      }
+    }
    
-    & > div:not(:last-child) {
+    & > a:not(:last-child) {
       margin-right: 2rem;
       
       @media only screen and (min-width: 650px) {
@@ -98,6 +141,7 @@
       }
       &--whattoplay {
         background-image: url(../img/whattoplay_react_d.jpg);
+        background-position: center 10%;
       }
       &--weinstall {
         background-image: url(../img/weinstall_d.jpg);
@@ -122,6 +166,9 @@
       }
       &--saule {
         background-image: url(../img/saule_d.jpg);
+      }
+      &--siechnice {
+        background-image: url(../img/siechnice_d.jpg);
       }
       
       @media only screen and (min-width: 450px) {
@@ -189,10 +236,12 @@
         background-image: url(../img/aden_m.jpg);
       }
       &--ovps {
-        background-image: url(../img/ovps_m.png);
+        background-image: url(../img/ovps_m.jpg);
+        background-position: center 20%;
       }
       &--poczta20 {
         background-image: url(../img/poczta20_m.jpg);
+        background-position: center top;
       }
       &--mikolow {
         background-image: url(../img/mikolow_m.jpg);
@@ -230,10 +279,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 10rem;
+      //width: 10rem;
       height: 4.2rem;
+      padding: 4px 16px;
       font-family: 'Fjalla One', sans-serif;
       font-size: 1.8rem;
+      line-height: 1;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: var(--color-text-projects);
@@ -261,21 +312,6 @@
 
       &:active {
         border: 2px solid var(--color-secondary);;
-      }
-    }
-  }
-
-  &__tags {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 1.6rem;
-
-    &__tag {
-      font-size: 1.4rem;
-
-      &:not(:last-of-type) {
-        margin-right: 1.2rem;
       }
     }
   }

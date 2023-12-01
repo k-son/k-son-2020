@@ -415,11 +415,17 @@ template {
   --width-website: 1100px;
   --color-bg-main: #fff;
   --color-main: #298c8c;
+  --color-main: #2e2d88;
   --color-main--lighter: #4caaaa;
+  --color-main--lighter: #484699;
   --color-main--darker: #117373;
+  --color-main--darker: #1E1C6E;
   --color-main--darkest: #196363;
+  --color-main--darkest: #0C0B51;
   --color-secondary: #ef7564;
+  --color-secondary: #C3822A;
   --color-secondary--lighter: #f17f6e;
+  --color-secondary--lighter: #DBA050;
   --color-tertiary: #f0cb80;
   --color-text: #555;
   --color-text-projects: #fff;
@@ -1231,16 +1237,41 @@ main {
   @media only screen and (min-width: 600px) {
     .project__description {
       width: 80%;
-      text-align: center; } }
+      text-align: left; } }
+
+.project__description-overwiev {
+  margin-bottom: 1.6rem; }
+
+.project__description-role {
+  font-weight: 500; }
+
+.project__when span {
+  font-size: 1.4rem; }
+  .project__when span:first-child {
+    margin-right: .6rem; }
+
+.project__tags {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap; }
+  .project__tags__tag {
+    font-size: 1.4rem; }
+    .project__tags__tag:not(:last-of-type) {
+      margin-right: 1.2rem; }
 
 .project__mockup {
   display: flex;
   justify-content: center;
   margin: var(--margin-common) 0; }
-  .project__mockup > div:not(:last-child) {
+  .project__mockup a {
+    cursor: pointer;
+    transition: all .2s; }
+    .project__mockup a:hover {
+      border-color: var(--color-secondary) !important; }
+  .project__mockup > a:not(:last-child) {
     margin-right: 2rem; }
     @media only screen and (min-width: 650px) {
-      .project__mockup > div:not(:last-child) {
+      .project__mockup > a:not(:last-child) {
         margin-right: var(--margin-common); } }
   .project__mockup__desktop {
     width: calc(22vw * 1.7777777777777777);
@@ -1272,7 +1303,8 @@ main {
     .project__mockup__desktop--tunegrips {
       background-image: url(../img/tunegrips_d.jpg); }
     .project__mockup__desktop--whattoplay {
-      background-image: url(../img/whattoplay_react_d.jpg); }
+      background-image: url(../img/whattoplay_react_d.jpg);
+      background-position: center 10%; }
     .project__mockup__desktop--weinstall {
       background-image: url(../img/weinstall_d.jpg); }
     .project__mockup__desktop--yoga {
@@ -1289,6 +1321,8 @@ main {
       background-image: url(../img/mikolow_d.jpg); }
     .project__mockup__desktop--saule {
       background-image: url(../img/saule_d.jpg); }
+    .project__mockup__desktop--siechnice {
+      background-image: url(../img/siechnice_d.jpg); }
     @media only screen and (min-width: 450px) {
       .project__mockup__desktop {
         width: calc(18vw * 1.7777777777777777);
@@ -1335,9 +1369,11 @@ main {
     .project__mockup__mobile--aden {
       background-image: url(../img/aden_m.jpg); }
     .project__mockup__mobile--ovps {
-      background-image: url(../img/ovps_m.png); }
+      background-image: url(../img/ovps_m.jpg);
+      background-position: center 20%; }
     .project__mockup__mobile--poczta20 {
-      background-image: url(../img/poczta20_m.jpg); }
+      background-image: url(../img/poczta20_m.jpg);
+      background-position: center top; }
     .project__mockup__mobile--mikolow {
       background-image: url(../img/mikolow_m.jpg); }
     .project__mockup__mobile--saule {
@@ -1366,10 +1402,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10rem;
     height: 4.2rem;
+    padding: 4px 16px;
     font-family: 'Fjalla One', sans-serif;
     font-size: 1.8rem;
+    line-height: 1;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--color-text-projects);
@@ -1389,16 +1426,6 @@ main {
       color: var(--color-secondary); }
     .project__links__link:active {
       border: 2px solid var(--color-secondary); }
-
-.project__tags {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 1.6rem; }
-  .project__tags__tag {
-    font-size: 1.4rem; }
-    .project__tags__tag:not(:last-of-type) {
-      margin-right: 1.2rem; }
 
 .personal::before {
   display: none;
@@ -1654,7 +1681,7 @@ main {
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
       overflow: hidden;
-      background-image: url(../../../img/form_decor.jpg);
+      background-image: url(../../../img/form_decor_2024.jpg);
       background-size: cover;
       transition: all .3s; } }
 
